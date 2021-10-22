@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if( Keyboard.current.anyKey.wasPressedThisFrame ) { 
+        /*if( Keyboard.current.anyKey.wasPressedThisFrame ) { 
             Vector3 jump = new Vector3(0,jumpForce,0);
-            GetComponent<Rigidbody>().AddForce(jump);
-        }
+            GetComponent<Rigidbody2D>().AddForce(jump);
+        }*/
         Vector3 movement = new Vector3 ( moveValue.x , 0.0f , 0.0f ) ;
-        GetComponent<Rigidbody>().AddForce(movement * speed * Time.fixedDeltaTime );
+        GetComponent<Rigidbody2D>().AddForce(movement * speed * Time.fixedDeltaTime );
     }
 }
