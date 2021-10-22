@@ -8,9 +8,17 @@ public class PlayerController : MonoBehaviour {
     public Vector2 moveValue;
     public float speed;
     public float jumpForce;
+    private int woodAmount;
+    private int stoneAmount;
 
     void OnMove(InputValue value ) {
         moveValue = value.Get<Vector2>() ;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "PickUp") {
+            other.gameObject.SetActive(false);
+        }
     }
 
     void FixedUpdate() {
