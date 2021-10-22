@@ -2,6 +2,7 @@ using System.Collections ;
 using System.Collections.Generic ;
 using UnityEngine ;
 using UnityEngine.InputSystem ;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -10,6 +11,14 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
     private int woodAmount;
     private int stoneAmount;
+    public Text woodCount;
+    public Text stoneCount;
+
+    void Start() {
+        woodAmount = 0;
+        stoneAmount = 0;
+        SetCountText();
+    }
 
     void OnMove(InputValue value ) {
         moveValue = value.Get<Vector2>() ;
@@ -18,6 +27,15 @@ public class PlayerController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "PickUp") {
             other.gameObject.SetActive(false);
+            if(other.transform.parent.gameObject.tag == "WoodPickUp") {
+                woodAmount ++;
+                //Debug.Log("Wood Picked up");
+                SetCountText();
+            } else if (other.transform.parent.gameObject.tag == "StonePickUp") {
+                stoneAmount ++;
+                //Debug.Log("Stone Picked up");
+                SetCountText();
+            }
         }
     }
 
@@ -28,5 +46,10 @@ public class PlayerController : MonoBehaviour {
         }*/
         Vector3 movement = new Vector3 ( moveValue.x , 0.0f , 0.0f ) ;
         GetComponent<Rigidbody2D>().AddForce(movement * speed * Time.fixedDeltaTime );
+    }
+
+    private void SetCountText() {
+        woodCount.text = "Wood Count: " + woodAmount.ToString();
+        stoneCount.text = "Stone Count: " + stoneAmount.ToString();
     }
 }
