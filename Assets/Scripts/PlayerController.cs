@@ -9,15 +9,18 @@ public class PlayerController : MonoBehaviour {
     public Vector2 moveValue;
     public float speed;
     public float jumpForce;
+    private Inventory inventory;
     private int woodAmount;
     private int stoneAmount;
     public Text woodCount;
     public Text stoneCount;
+    public Canvas craftinUI; 
 
     void Start() {
         woodAmount = 0;
         stoneAmount = 0;
         SetCountText();
+        inventory = new Inventory();
     }
 
     void OnMove(InputValue value ) {
