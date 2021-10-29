@@ -8,11 +8,17 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public float HitPoints;
+    public float MaxHitPoints = 5;
+    public HealthBarBehaviour HealthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        HitPoints = MaxHitPoints;
+        HealthBar.SetHealth(HitPoints, MaxHitPoints);
+
     }
 
     // Update is called once per frame

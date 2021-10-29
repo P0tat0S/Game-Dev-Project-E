@@ -1,24 +1,62 @@
-using System.Collections ;
-using System.Collections.Generic ;
-using UnityEngine ;
-using UnityEngine.InputSystem ;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    private const float moveSpeed = 10f;
 
-    public Vector2 moveValue;
-    public float speed;
-    public float jumpForce;
+    private Rigidbody2D rb;
+    private Vector3 movement;
+    private bool dashPressed;
 
-    void OnMove(InputValue value ) {
-        moveValue = value.Get<Vector2>() ;
+    // Start is called before the first frame update
+    private void Start()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate() {
-        /*if( Keyboard.current.anyKey.wasPressedThisFrame ) { 
-            Vector3 jump = new Vector3(0,jumpForce,0);
-            GetComponent<Rigidbody2D>().AddForce(jump);
-        }*/
-        Vector3 movement = new Vector3 ( moveValue.x , 0.0f , 0.0f ) ;
-        GetComponent<Rigidbody2D>().AddForce(movement * speed * Time.fixedDeltaTime );
+    // Update is called once per frame
+    void Update()
+    {
+        float moveX = 0f;
+        float moveY = 0f;
+
+        if (Input.GetKey(KeyCode.W)) {
+            moveY = +1f;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveX = -1f;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveY = -1f;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = +1f;
+        }
+
+        movement = new Vector3(moveX, moveY).normalized;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            dashPressed = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = movement * moveSpeed;
+
+        if (dashPressed)
+        {
+            float dashSpeed = 5f;
+            rb.MovePosition(transform.position + movement * dashSpeed);
+            dashPressed = false;
+        }
     }
 }
