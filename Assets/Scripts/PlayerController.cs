@@ -1,58 +1,71 @@
 using System.Collections ;
 using System.Collections.Generic ;
 using UnityEngine ;
-using UnityEngine.InputSystem ;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    public Vector2 moveValue;
-    public float speed;
-    public float jumpForce;
+    //Inventory Variables
+    [SerializeField] private UI_Inventory uiInventory;
     private Inventory inventory;
-    private int woodAmount;
-    private int stoneAmount;
-    public Text woodCount;
-    public Text stoneCount;
-    public Canvas craftinUI; 
 
-    void Start() {
-        woodAmount = 0;
-        stoneAmount = 0;
-        SetCountText();
+    //Movement Variables
+    private const float moveSpeed = 10f;
+    private Rigidbody2D rb;
+    private Vector3 movement;
+    private bool dashPressed;
+
+    // Start is called before the first frame update
+    private void Start () {
+        //Movement
+        rb = this.GetComponent<Rigidbody2D>();
+        //Inventory
         inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
     }
 
-    void OnMove(InputValue value ) {
-        moveValue = value.Get<Vector2>() ;
-    }
+    // Update is called once per frame
+    void Update () {
+        float moveX = 0f;
+        float moveY = 0f;
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "PickUp") {
-            other.gameObject.SetActive(false);
-            if(other.transform.parent.gameObject.tag == "WoodPickUp") {
-                woodAmount ++;
-                //Debug.Log("Wood Picked up");
-                SetCountText();
-            } else if (other.transform.parent.gameObject.tag == "StonePickUp") {
-                stoneAmount ++;
-                //Debug.Log("Stone Picked up");
-                SetCountText();
-            }
+        if (Input.GetKey(KeyCode.W)){
+          moveY = +1f;
+        }
+
+        if (Input.GetKey(KeyCode.A)){
+          moveX = -1f;
+        }
+
+        if (Input.GetKey(KeyCode.S)){
+          moveY = -1f;
+        }
+
+        if (Input.GetKey(KeyCode.D)){
+          moveX = +1f;
+        }
+
+        movement = new Vector3(moveX, moveY).normalized;
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+          dashPressed = true;
         }
     }
 
-    void FixedUpdate() {
-        /*if( Keyboard.current.anyKey.wasPressedThisFrame ) { 
-            Vector3 jump = new Vector3(0,jumpForce,0);
-            GetComponent<Rigidbody2D>().AddForce(jump);
-        }*/
-        Vector3 movement = new Vector3 ( moveValue.x , 0.0f , 0.0f ) ;
-        GetComponent<Rigidbody2D>().AddForce(movement * speed * Time.fixedDeltaTime );
+    private void FixedUpdate(){
+        rb.velocity = movement * moveSpeed;
+
+        if (dashPressed){
+          float dashSpeed = 5f;
+          rb.MovePosition(transform.position + movement * dashSpeed);
+          dashPressed = false;
+        }
     }
 
-    private void SetCountText() {
-        woodCount.text = "Wood Count: " + woodAmount.ToString();
-        stoneCount.text = "Stone Count: " + stoneAmount.ToString();
+    //TO REMOVE
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "PickUp") {
+            other.gameObject.SetActive(false);
+        }
     }
 }
