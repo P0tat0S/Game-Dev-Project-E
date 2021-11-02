@@ -38,6 +38,18 @@ public class Inventory {
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    public void RemoveItem(Item item) {
+        foreach (Item inventoryItem in itemList) {
+            if (inventoryItem.itemType == item.itemType) {
+                inventoryItem.amount -= 1;
+            }
+            if (inventoryItem.amount == 0) {
+                itemList.Remove(item);
+            }
+            OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
     public List<Item> GetItemList() {
         return itemList;
     }
