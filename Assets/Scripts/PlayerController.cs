@@ -48,6 +48,16 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var enemy = collision.collider.GetComponent<EnemyController>();
+        if(enemy)
+        {
+            enemy.TakeHit(1);
+            Debug.Log("Damage: " + enemy.GetDamage());
+        }
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = movement * moveSpeed;
