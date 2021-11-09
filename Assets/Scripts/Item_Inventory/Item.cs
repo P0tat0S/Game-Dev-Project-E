@@ -43,27 +43,6 @@ public class Item {
                 return true;
             case ItemType.Sword:
                 return false;
-
-        }
-    }
-    
-    //TODO: Refactor code to be used in different classes, each has its own uses is necessary
-    public void useItem(Player player, int index) {
-        switch (itemType) {
-            default:
-            case ItemType.HealthPotion:
-                player.heal();
-                player.inventory.RemoveItem(player.inventory.GetItemList()[index]);
-                break;
-            case ItemType.Food:
-                player.eat();
-                player.inventory.RemoveItem(player.inventory.GetItemList()[index]);
-                break;
-            case ItemType.Sword:
-            case ItemType.Wood:
-            case ItemType.Stone:
-            case ItemType.Coin:
-                return;
         }
     }
 }

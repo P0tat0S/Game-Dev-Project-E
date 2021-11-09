@@ -9,10 +9,12 @@ public class UI_Inventory : MonoBehaviour {
     private Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
+    private Transform emptySlot;
 
     private void Awake() {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+        emptySlot = itemSlotContainer.Find("emptySlot");
     }
 
     public void SetInventory(Inventory inventory) {
@@ -29,10 +31,18 @@ public class UI_Inventory : MonoBehaviour {
     private void RefreshInventoryItems() {
         foreach (Transform child in itemSlotContainer) {
             if (child == itemSlotTemplate) continue;
+            if (child == emptySlot) continue;
             Destroy(child.gameObject);
         }
         int x = 0;
         float itemSlotCellSize = 98f;
+        //Creation of empty itemSlots
+        for (int i = 0; i < 10; i++) {
+            RectTransform itemSlotRectTransform = Instantiate(emptySlot, itemSlotContainer).GetComponent<RectTransform>();
+            itemSlotRectTransform.gameObject.SetActive(true);
+            itemSlotRectTransform.anchoredPosition = new Vector2(i * itemSlotCellSize, 0);
+        }
+        //Creation of itemSlots with items
         foreach (Item item in inventory.GetItemList()) {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);

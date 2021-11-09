@@ -8,12 +8,17 @@ public class Player : MonoBehaviour {
     //Inventory Variables
     [SerializeField] private UI_Inventory uiInventory;
     public Inventory inventory;
+    public GameObject craftableItem;
+    private bool ableToCraft;
+    public GameObject UI_Crafting;
   
     //Movement Variables
     private const float moveSpeed = 10f;
     private Rigidbody2D rb;
     private Vector3 movement;
     private bool dashPressed;
+    public float dashCooldown;
+    private float nextDash;
 
     //TEMP player stats
     private int health = 100;
@@ -40,6 +45,19 @@ public class Player : MonoBehaviour {
         Debug.Log("You EAT \n"+"Player Hunger: " + hunger);
     }
 
+    //Sword crafting TODO: better system, current system requires knowing the enum of items
+    public void craftItem() {
+        if(inventory.SearchItem(1, 2) && inventory.SearchItem(0, 1)) {
+            Transform temp = GameObject.Find("CraftingOutput").transform;
+            Debug.Log("You have the necessary items");
+            inventory.RemoveItem(1,2);
+            inventory.RemoveItem(0,1);
+            Instantiate(craftableItem, temp);
+        } else {
+            Debug.Log("You dont have the necessary items");
+        }
+    }
+
     // Start is called before the first frame update
     private void Start() {
         //Movement
@@ -49,6 +67,7 @@ public class Player : MonoBehaviour {
         uiInventory.SetInventory(inventory);
         Debug.Log("Player Health: " + health);
         Debug.Log("Player Hunger: " + hunger);
+        ableToCraft = false;
     }
 
     // Update is called once per frame
@@ -73,44 +92,49 @@ public class Player : MonoBehaviour {
 
         movement = new Vector3(moveX, moveY).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextDash){
           dashPressed = true;
         }
         
         //TEMP Inventory Usage       
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            itemList[0].useItem(this, 0);
+            inventory.useItem(itemList[0], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            itemList[1].useItem(this, 1);
+            inventory.useItem(itemList[1], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
-            itemList[2].useItem(this, 2);
+            inventory.useItem(itemList[2], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4)) {
-            itemList[3].useItem(this, 3);
+            inventory.useItem(itemList[3], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5)) {
-            itemList[4].useItem(this, 4);
+            inventory.useItem(itemList[4], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6)) {
-            itemList[5].useItem(this, 5);
+            inventory.useItem(itemList[5], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha7)) {
-            itemList[6].useItem(this, 6);
+            inventory.useItem(itemList[6], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha8)) {
-            itemList[7].useItem(this, 7);
+            inventory.useItem(itemList[7], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha9)) {
-            itemList[8].useItem(this, 8);
+            inventory.useItem(itemList[8], this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha0)) {
-            itemList[9].useItem(this, 9);
+            inventory.useItem(itemList[9], this);
         }
+
+        //TEMP Inventory and Player interactions
         if (Input.GetKeyDown(KeyCode.E)) {
             this.receiveDamage();
             this.receiveHunger();
+        }
+        if (Input.GetKeyDown(KeyCode.C)) {
+            if(ableToCraft) craftItem();
         }
     }
 
@@ -120,6 +144,7 @@ public class Player : MonoBehaviour {
         if (dashPressed){
           float dashSpeed = 5f;
           rb.MovePosition(transform.position + movement * dashSpeed);
+          nextDash = Time.time + dashCooldown;
           dashPressed = false;
         }
 
@@ -133,6 +158,21 @@ public class Player : MonoBehaviour {
             other.gameObject.SetActive(false);
             inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
+        }
+
+        //crafting in
+        if(other.gameObject.tag == "CraftingStation") {
+            Instantiate(UI_Crafting);
+            ableToCraft = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        //crafting out
+        if(other.gameObject.tag == "CraftingStation") {
+            GameObject panel = GameObject.Find("UI_Crafting");
+            Destroy(panel);
+            ableToCraft = false;
         }
     }
 }
