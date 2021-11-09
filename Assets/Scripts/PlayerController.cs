@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     private const float moveSpeed = 10f;
 
+
     private Rigidbody2D rb;
     private Vector3 movement;
     private bool dashPressed;
+
 
     // Start is called before the first frame update
     private void Start()
