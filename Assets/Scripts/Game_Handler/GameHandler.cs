@@ -4,9 +4,10 @@ public class GameHandler : MonoBehaviour{
     public Transform pfHealthBar;
 
     private void Start(){
-        HealthSystem healthSystem = new HealthSystem(100);
+        HealthSystem healthSystem = new HealthSystem(100);//creation of healthbar
 
-        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(-16,8), Quaternion.identity);
+        //General healthbar with no reference
+        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(-19,11), Quaternion.identity);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 

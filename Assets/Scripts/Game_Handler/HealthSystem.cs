@@ -5,7 +5,11 @@ public class HealthSystem{
     private int health;
     private int healthMax;
 
-    public HealthSystem(int healthMax){
+
+    /*********************
+        Helper Functions
+    **********************/
+    public HealthSystem(int healthMax) {//Constructor
         this.healthMax = healthMax;
         health = healthMax;
     }

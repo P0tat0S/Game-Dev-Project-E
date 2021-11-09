@@ -20,6 +20,9 @@ public class Player : MonoBehaviour {
     public float dashCooldown;
     private float nextDash;
 
+    //Player Stats
+    [SerializeField] private HealthBar healthBar;
+
     //TEMP player stats
     private int health = 100;
     private int hunger = 20;
