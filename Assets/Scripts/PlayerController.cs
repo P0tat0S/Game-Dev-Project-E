@@ -50,12 +50,21 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var enemy = collision.collider.GetComponent<EnemyController>();
-        if(enemy)
+        var enemy1 = collision.collider.GetComponent<KnightController>();
+        var enemy2 = collision.collider.GetComponent<ArcherController>();
+
+        if (enemy1)
         {
-            enemy.TakeHit(1);
-            Debug.Log("Damage: " + enemy.GetDamage());
+            enemy1.TakeHit(1);
+            Debug.Log("Damage: " + enemy1.GetDamage());
         }
+
+        if (enemy2)
+        {
+            enemy2.TakeHit(1);
+            Debug.Log("Damage: " + enemy2.GetDamage());
+        }
+
     }
 
     private void FixedUpdate()
