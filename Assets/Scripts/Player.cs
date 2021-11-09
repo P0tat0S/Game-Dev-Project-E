@@ -21,16 +21,16 @@ public class Player : MonoBehaviour {
     private float nextDash;
 
     //Player Stats
-    [SerializeField] private HealthBar healthBar;
+    public Transform pfHealthBar;
+    public HealthSystem healthSystem = new HealthSystem(100);
 
     //TEMP player stats
     private int health = 100;
     private int hunger = 20;
 
     //TEMP player actions
-    private void receiveDamage(){//Action to receive damage
-        health -= Random.Range(1,10);
-        Debug.Log("You got hit \n"+"Player Health: " + health);
+    public void receiveDamage(){//Action to receive damage
+        healthSystem.Damage(10);
     }
 
     private void receiveHunger(){//Action to get hungry
@@ -63,6 +63,17 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
+        /*****************
+            Player Stats
+        ******************/
+        //Create healthBar for the instance
+        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 1.6f), Quaternion.identity, this.transform);
+        HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+        healthBar.Setup(healthSystem);
+
+        /******************
+            Other Actions
+        ******************/
         //Movement
         rb = this.GetComponent<Rigidbody2D>();
         //Inventory
