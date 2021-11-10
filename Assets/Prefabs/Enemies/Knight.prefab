@@ -138,5 +138,6 @@ MonoBehaviour:
   moveSpeed: 5
   health: 45
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
+  scoreOnKill: 2
   StartTimeBtwShots: 2
   Projectile: {fileID: 94605968629755793, guid: 7d80a0ac805a8ff4b8c07630e4f8ad6c, type: 3}
