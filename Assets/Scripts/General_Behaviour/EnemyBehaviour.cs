@@ -2,60 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherController : MonoBehaviour
-{
+public class EnemyBehaviour : MonoBehaviour {
+    //Movement variables
     private Transform player;
-    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public float moveSpeed;
 
     //Enemy Stats
+    public int health;
     public Transform pfHealthBar;
-    public HealthSystem healthSystem = new HealthSystem(10);
+    public HealthSystem healthSystem;
 
-    //Arrow stats
+    //Projectile stats
     private float TimeBtwShots;
     public float StartTimeBtwShots;
     public GameObject Projectile;
 
 
-    // Start is called before the first frame update
-    void Start() {
-        /*****************
-            Enemy Stats
-        ******************/
-        //Create healthBar for the instance
+    void Start() { //Start to initialise healthbar and movement
+        /*******************
+           Enemy Healthbar
+        *******************/
+        //Start Health System of the enemy with selected health
+        healthSystem = new HealthSystem(health);
+        //Create the healthbar position it and scale it
         Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 1.6f), Quaternion.identity, this.transform);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 
-        //Movement
+        //Player targeting and rigid body init for Movement
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
-    void Update() {
-        Vector3 direction = player.position - transform.position;
-        direction = -direction;
-        direction.Normalize();
-        movement = direction;
+    void FixedUpdate() {
+        //Movement towards player
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-        if(TimeBtwShots <= 0) {
+        //Shooting/Attacking
+        if (TimeBtwShots <= 0) {
             Instantiate(Projectile, transform.position, Quaternion.identity);
             TimeBtwShots = StartTimeBtwShots;
-
-        }
-        else {
+        } else {
             TimeBtwShots -= Time.deltaTime;
         }
 
-    }
-    private void FixedUpdate() {
-        moveCharacter(movement);
-    }
-    void moveCharacter(Vector2 direction) {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        //Check if dead
+        if (healthSystem.GetHealth() <= 0) {
+            Destroy(gameObject);
+        }
     }
 }

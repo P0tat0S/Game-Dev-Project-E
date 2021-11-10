@@ -54,9 +54,9 @@ public class Inventory {
         }
     }
     //Overloaded version of remove item by passing the specific item and the amount to remove
-    public void RemoveItem(int type, int amount) {
+    public void RemoveItem(Item.ItemType type, int amount) {
         foreach (Item inventoryItem in itemList) {
-            if ((int)inventoryItem.itemType == type) {
+            if (inventoryItem.itemType == type) {
                 inventoryItem.amount -= amount;
             }
             if (inventoryItem.amount <= 0) {
@@ -66,19 +66,14 @@ public class Inventory {
         }
     }
 
-    public bool SearchItem(int type, int amount) {
+    public bool SearchItem(Item.ItemType type, int amount) {
         foreach (Item inventoryItem in itemList) {
-            if ((int) inventoryItem.itemType == type) {
-                Debug.Log("Item found");
-                if(inventoryItem.amount >= amount) {
+            if (inventoryItem.itemType == type) {
+                if (inventoryItem.amount >= amount) {
                     Debug.Log("Item sufficient");
                     return true;
                 } else {
-                    Debug.Log(inventoryItem.itemType + 
-                        " Amount in inventory: " + inventoryItem.amount +
-                        " Required: " + amount + 
-                        " Requires more items"
-                    );
+                    Debug.Log("Item insufficient");
                     return false;
                 }
             }
@@ -87,20 +82,23 @@ public class Inventory {
     }
 
     public void useItem(Item item, Player player) {
-        switch ((int)item.itemType) {
+        switch (item.itemType) {
             default:
-            case 3:
-                player.heal();
+            case Item.ItemType.HealthPotion:
+                player.healthSystem.Heal(25);
                 RemoveItem(item);
                 break;
-            case 4:
-                player.eat();
+            case Item.ItemType.Food:
+                //player.hungerSystem.Heal(25);
                 RemoveItem(item);
                 break;
-            case 2:
-            case 0:
-            case 1:
-            case 5:
+            case Item.ItemType.Sword:
+                player.ableToAttack = true;
+                RemoveItem(item);
+                break;
+            case Item.ItemType.Coin:
+            case Item.ItemType.Wood:
+            case Item.ItemType.Stone:
                 Debug.Log("The item selected has no interaction yet");
                 return;
         }

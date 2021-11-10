@@ -3,7 +3,9 @@ guid: 3412a8d0221fa4c439c173737a7c4d66
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
+  - Projectile: {fileID: 6051777856695151712, guid: a66d4217aaf4a0e469997a2d9864a814, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
