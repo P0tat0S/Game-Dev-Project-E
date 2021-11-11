@@ -13,6 +13,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public int health;
     public Transform pfHealthBar;
     public HealthSystem healthSystem;
+    public int scoreOnKill;
 
     //Projectile stats
     private float TimeBtwShots;
@@ -53,6 +54,8 @@ public class EnemyBehaviour : MonoBehaviour {
         //Check if dead
         if (healthSystem.GetHealth() <= 0) {
             Destroy(gameObject);
+            var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
+            gameHandler.UpdateScore(scoreOnKill);
         }
     }
 }

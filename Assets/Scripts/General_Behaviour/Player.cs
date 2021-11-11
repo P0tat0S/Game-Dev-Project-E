@@ -32,17 +32,7 @@ public class Player : MonoBehaviour {
     //Player Stats
     public Transform pfHealthBar;
     public HealthSystem healthSystem = new HealthSystem(100);
-
-    //Sword crafting TODO: better system, not really expandable
-    public void craftItem() {
-        if(inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1)) {
-            Transform temp = GameObject.Find("CraftingOutput").transform;
-            Debug.Log("You have the necessary items");
-            inventory.RemoveItem(Item.ItemType.Stone, 2);
-            inventory.RemoveItem(Item.ItemType.Wood, 1);
-            Instantiate(craftableItem, temp);
-        } else Debug.Log("You dont have the necessary items");
-    }
+    private GameHandler gameHandler;
 
     // Start is called before the first frame update
     private void Start() {
@@ -60,9 +50,14 @@ public class Player : MonoBehaviour {
         ******************/
         //Movement
         rb = this.GetComponent<Rigidbody2D>();
+        //Get game handler
+        gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
         //Inventory
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+        if(UI_Crafting == null) {
+            UI_Crafting = GameObject.Find("UI_Inventory");
+        }
     }
 
     // Update is called once per frame
@@ -72,19 +67,18 @@ public class Player : MonoBehaviour {
         List<Item> itemList = inventory.GetItemList();
 
         //Movement by WASD or Arrow keys
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) moveY = +1f;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) moveX = -1f;
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) moveX = +1f;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) { moveY = +1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) { moveX = -1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) { moveY = -1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) { moveX = +1f; DestroyTutorial(); }
 
         movement = new Vector3(moveX, moveY).normalized;
 
-        //Space to Dash 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextDash) dashPressed = true;
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextDash) dashPressed = true;//Space to dash
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextAttack) if (ableToAttack) attackPressed = true;//E to Attack
+        if (Input.GetKeyDown(KeyCode.C)) if(ableToCraft) craftItem();//C to craft
+        if (Input.GetKeyDown(KeyCode.R)) gameHandler.Restart();//R to restart
 
-        //E to Slash Enemies
-        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextAttack) if (ableToAttack) attackPressed = true;
-        
         //TEMP Inventory Usage, pasing player and invoking actions     
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.useItem(itemList[0], this);
         if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.useItem(itemList[1], this);
@@ -97,27 +91,44 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha9)) inventory.useItem(itemList[8], this);
         if (Input.GetKeyDown(KeyCode.Alpha0)) inventory.useItem(itemList[9], this);
 
-        //Crafting with C
-        if (Input.GetKeyDown(KeyCode.C)) if(ableToCraft) craftItem();
     }
 
     private void FixedUpdate(){//Fixed update for dashing and movement
         rb.velocity = movement * moveSpeed;
 
-        if(dashPressed) {
+        if(dashPressed) {//dash action
             float dashSpeed = 5f;
             rb.MovePosition(transform.position + movement * dashSpeed);
             nextDash = Time.time + dashCooldown;
             dashPressed = false;
         }
 
-        if(attackPressed) {
+        if(attackPressed) {//attack action
             spriteRenderer.sprite = newSprite;
             Instantiate(Projectile, transform.position, Quaternion.identity);
             nextAttack = Time.time + attackCooldown;
             attackPressed = false;
         }
-        
+
+        //Check if dead
+        if (healthSystem.GetHealth() <= 0){
+            gameHandler.ShowGameOver();
+            Destroy(gameObject);
+        }
+
+    }
+
+    //Sword crafting TODO: better system, not really expandable
+    public void craftItem() {
+        if (inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1))
+        {
+            Transform temp = GameObject.Find("CraftingOutput").transform;
+            Debug.Log("You have the necessary items");
+            inventory.RemoveItem(Item.ItemType.Stone, 2);
+            inventory.RemoveItem(Item.ItemType.Wood, 1);
+            Instantiate(craftableItem, temp);
+        }
+        else Debug.Log("You dont have the necessary items");
     }
 
     //Pick UP Items
@@ -145,5 +156,10 @@ public class Player : MonoBehaviour {
             Destroy(panel);
             ableToCraft = false;
         }
+    }
+
+    private void DestroyTutorial() {//Destroy tutorial on move
+        GameObject tutorial = GameObject.Find("Tutorial");
+        Destroy(tutorial);
     }
 }
