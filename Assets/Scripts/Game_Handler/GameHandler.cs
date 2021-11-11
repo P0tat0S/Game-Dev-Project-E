@@ -26,10 +26,15 @@ public class GameHandler : MonoBehaviour {
     private int score = 0;
     public Text timerText;
     public Text scoreText;
+    private Renderer tempBackgroundColour;
     
     private void Start() {
+        //Get player gameobject and Script
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<Player>();
+
+        //Get tempBackground renderer
+        tempBackgroundColour = GameObject.Find("temp_Background").GetComponent<Renderer>();
 
         EnemySpawnTimer();//Start Spawning enemies
         UpdateScore(0);
@@ -56,8 +61,11 @@ public class GameHandler : MonoBehaviour {
 
     //Function to keep update numberof days, 1day = 30seconds
     private void DayTimer() {
-        numberOfDays = (int)(Time.timeSinceLevelLoad/30);
+        //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
+        float dayLight = 0.5f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
+        numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
         timerText.text = "Day: " + numberOfDays.ToString();
+        tempBackgroundColour.material.color = new Color(1*dayLight,1*dayLight,1*dayLight,1);
     }
 
     private void SpawnEnemy() {

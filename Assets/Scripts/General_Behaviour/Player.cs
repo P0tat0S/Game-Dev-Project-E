@@ -67,10 +67,10 @@ public class Player : MonoBehaviour {
         List<Item> itemList = inventory.GetItemList();
 
         //Movement by WASD or Arrow keys
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) moveY = +1f;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) moveX = -1f;
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) moveX = +1f;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) { moveY = +1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) { moveX = -1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) { moveY = -1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) { moveX = +1f; DestroyTutorial(); }
 
         movement = new Vector3(moveX, moveY).normalized;
 
@@ -119,8 +119,7 @@ public class Player : MonoBehaviour {
     }
 
     //Sword crafting TODO: better system, not really expandable
-    public void craftItem()
-    {
+    public void craftItem() {
         if (inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1))
         {
             Transform temp = GameObject.Find("CraftingOutput").transform;
@@ -157,5 +156,10 @@ public class Player : MonoBehaviour {
             Destroy(panel);
             ableToCraft = false;
         }
+    }
+
+    private void DestroyTutorial() {//Destroy tutorial on move
+        GameObject tutorial = GameObject.Find("Tutorial");
+        Destroy(tutorial);
     }
 }
