@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4014636961990557199}
   - component: {fileID: 4014636961990557198}
-  - component: {fileID: 4014636961990557197}
   - component: {fileID: 4014636961990557298}
   - component: {fileID: 8444923666175864678}
+  - component: {fileID: 3181531726193655899}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Enemy
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4014636961990557197
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4014636961990557196}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.61008596, y: 0.6660837}
-  m_Direction: 0
 --- !u!50 &4014636961990557298
 Rigidbody2D:
   serializedVersion: 4
@@ -138,5 +122,32 @@ MonoBehaviour:
   moveSpeed: 5
   health: 45
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
+  scoreOnKill: 2
   StartTimeBtwShots: 2
   Projectile: {fileID: 94605968629755793, guid: 7d80a0ac805a8ff4b8c07630e4f8ad6c, type: 3}
+--- !u!61 &3181531726193655899
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014636961990557196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.029606283, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.59, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.36685818, y: 0.64}
+  m_EdgeRadius: 0

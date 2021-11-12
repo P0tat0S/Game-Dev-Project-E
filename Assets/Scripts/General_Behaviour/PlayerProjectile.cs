@@ -16,6 +16,7 @@ public class PlayerProjectile : MonoBehaviour {
     void Start() { //Start is used to direct the arrow towards the enemy
         //Get position of the enemy for the projectile
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if(enemy == null) enemy = GameObject.Find("GameHandler");//TEMP projectile guiding of the player to center
         lastEnemyPosition = enemy.transform.position;
 
         //Rotate projectile once towards enemy

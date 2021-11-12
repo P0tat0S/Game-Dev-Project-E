@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [Serializable]
 public class Item {
 
-    //Define all types of items
+    //Define all types of items in an Enum
     public enum ItemType {
         Wood,
         Stone,
@@ -19,6 +19,10 @@ public class Item {
 
     public ItemType itemType;
     public int amount;
+
+    /*****************************
+        Helper functions of Items
+    *****************************/
 
     public Sprite GetSprite() {
         switch (itemType) {

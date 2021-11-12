@@ -5,25 +5,27 @@ using TMPro;
 
 public class ItemWorld : MonoBehaviour {
 
-    public static ItemWorld SpawnItemWorld(Vector3 position, Item item) {
-        Transform transform = Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
-
-        ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
-        itemWorld.SetItem(item);
-
-        return itemWorld;
-    }
-
+    //Item variables
     private Item item;
     private SpriteRenderer spriteR;
     private TextMeshPro textMeshPro;
 
-    private void Awake() {
-        spriteR = GetComponent<SpriteRenderer>();
-        textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
-
+    //Function for later usage to spawn items
+    public static ItemWorld SpawnItemWorld(Vector3 position, Item item) {
+        Transform transform = Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
+        ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
+        itemWorld.SetItem(item);
+        return itemWorld;
     }
 
+    private void Awake() {//Item World fetch of sprite and amount text
+        spriteR = GetComponent<SpriteRenderer>();
+        textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
+    }
+
+    /***********************************
+        Helper Functions for ItemWorld
+    ***********************************/
     public void SetItem(Item item) {
         this.item = item;
         spriteR.sprite = item.GetSprite();

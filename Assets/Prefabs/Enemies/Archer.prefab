@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2739487577064298533}
   - component: {fileID: 2739487577064298532}
   - component: {fileID: 2739487577064298528}
-  - component: {fileID: 2739487577064298535}
   - component: {fileID: 2739487577064298534}
+  - component: {fileID: 9180933763561039536}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Enemy
@@ -107,22 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &2739487577064298535
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2739487577064298539}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0011818409, y: 0.0035454035}
-  m_Size: {x: 0.34454775, y: 0.6934588}
-  m_Direction: 0
 --- !u!114 &2739487577064298534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,5 +122,32 @@ MonoBehaviour:
   moveSpeed: -1
   health: 15
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
+  scoreOnKill: 3
   StartTimeBtwShots: 1
   Projectile: {fileID: 6051777856695151712, guid: a66d4217aaf4a0e469997a2d9864a814, type: 3}
+--- !u!61 &9180933763561039536
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739487577064298539}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03267911, y: -0.009879723}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 1.23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39528686, y: 0.62024057}
+  m_EdgeRadius: 0
