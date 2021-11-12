@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
     public GameObject craftableItem;
     private bool ableToCraft = false;
     public GameObject UI_Crafting;
-  
+
     //Movement Variables
     private const float moveSpeed = 10f;
     private Rigidbody2D rb;
@@ -31,8 +31,10 @@ public class Player : MonoBehaviour {
 
     //Player Stats
     public Transform pfHealthBar;
+    public Transform pfHungerBar;
     public HealthSystem healthSystem = new HealthSystem(100);
     private GameHandler gameHandler;
+    public HungerSystem hungerSystem = new HungerSystem(50);
 
     // Start is called before the first frame update
     private void Start() {
@@ -44,6 +46,15 @@ public class Player : MonoBehaviour {
         Transform healthBarTransform = Instantiate(pfHealthBar, playerStatus);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
+
+        /**********************
+            Player Hunger Bar
+        **********************/
+        Transform hungerBarTransform = Instantiate(pfHungerBar, playerStatus);
+        //Create hungerBar for the instance
+        hungerBarTransform.position = hungerBarTransform.position + new Vector3(0,-2);
+        HungerBar hungerBar = hungerBarTransform.GetComponent<HungerBar>();
+        hungerBar.Setup(hungerSystem);
 
         /******************
             Other Actions
@@ -79,7 +90,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C)) if(ableToCraft) craftItem();//C to craft
         if (Input.GetKeyDown(KeyCode.R)) gameHandler.Restart();//R to restart
 
-        //TEMP Inventory Usage, passing player and invoking actions and getting out of index errors    
+        //TEMP Inventory Usage, passing player and invoking actions and getting out of index errors
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.useItem(itemList[0], this);
         if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.useItem(itemList[1], this);
         if (Input.GetKeyDown(KeyCode.Alpha3)) inventory.useItem(itemList[2], this);
