@@ -1,0 +1,39 @@
+using System;
+
+public class HungerSystem{
+    public event EventHandler OnHungerChanged;
+    private int hunger;
+    private int hungerMax;
+
+
+    /*********************
+        Helper Functions
+    **********************/
+    public HungerSystem(int hungerMax) {//Constructor
+        this.hungerMax = hungerMax;
+        hunger = hungerMax;
+    }
+
+    public int GetHunger(){
+        return hunger;
+    }
+
+    public float GetHungerPercentage(){
+        return (float)hunger / hungerMax;
+    }
+
+    public void Starve(int starveAmount){
+        hunger -= starveAmount;
+        if (hunger < 0) hunger = 0;
+
+        if (OnHungerChanged != null) OnHungerChanged(this, EventArgs.Empty);
+    }
+
+    public void Eat(int eatAmount){
+        hunger += eatAmount;
+        if (hunger > hungerMax) hunger = hungerMax;
+
+        if (OnHungerChanged != null) OnHungerChanged(this, EventArgs.Empty);
+    }
+
+}

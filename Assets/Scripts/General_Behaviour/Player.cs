@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
     public GameObject craftableItem;
     private bool ableToCraft = false;
     public GameObject UI_Crafting;
-  
+
     //Movement Variables
     private const float moveSpeed = 10f;
     private Rigidbody2D rb;
@@ -32,6 +32,8 @@ public class Player : MonoBehaviour {
     //Player Stats
     public Transform pfHealthBar;
     public HealthSystem healthSystem = new HealthSystem(100);
+    public Transform pfHungerBar;
+    public HungerSystem hungerSystem = new HungerSystem(50);
 
     //Sword crafting TODO: better system, not really expandable
     public void craftItem() {
@@ -54,6 +56,10 @@ public class Player : MonoBehaviour {
         Transform healthBarTransform = Instantiate(pfHealthBar, playerStatus);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
+        //Create hungerBar for the instance
+        Transform hungerBarTransform = Instantiate(pfHungerBar, playerStatus);
+        HungerBar hungerBar = hungerBarTransform.GetComponent<HungerBar>();
+        hungerBar.Setup(hungerSystem);
 
         /******************
             Other Actions
@@ -79,13 +85,13 @@ public class Player : MonoBehaviour {
 
         movement = new Vector3(moveX, moveY).normalized;
 
-        //Space to Dash 
+        //Space to Dash
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextDash) dashPressed = true;
 
         //E to Slash Enemies
         if (Input.GetKeyDown(KeyCode.E) && Time.time > nextAttack) if (ableToAttack) attackPressed = true;
-        
-        //TEMP Inventory Usage, pasing player and invoking actions     
+
+        //TEMP Inventory Usage, pasing player and invoking actions
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.useItem(itemList[0], this);
         if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.useItem(itemList[1], this);
         if (Input.GetKeyDown(KeyCode.Alpha3)) inventory.useItem(itemList[2], this);
@@ -117,7 +123,7 @@ public class Player : MonoBehaviour {
             nextAttack = Time.time + attackCooldown;
             attackPressed = false;
         }
-        
+
     }
 
     //Pick UP Items
