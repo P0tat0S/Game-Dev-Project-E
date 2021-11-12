@@ -40,7 +40,7 @@ public class GameHandler : MonoBehaviour {
         UpdateScore(0);
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate() {//Day system and enemy Spawn
         if (Time.timeSinceLevelLoad >= enemySpawnTime) {
             SpawnEnemy();
             EnemySpawnTimer();
@@ -48,24 +48,24 @@ public class GameHandler : MonoBehaviour {
         DayTimer();
     }
 
-    private void Update() {
+    private void Update() {//Inputs
         if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
     }
  
     //Function to Spawn enemies between 3 to 6 seconds and up to 1 and 3 seconds
     private void EnemySpawnTimer() {
-        float growth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/11.0f);
+        float growth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/11.0f);// From 0 to 2/3 being the max
         float delay = Random.Range(3.0f*growth,6.0f*growth);
         enemySpawnTime = Time.timeSinceLevelLoad + delay;//Reset Timer
     }
 
-    //Function to keep update numberof days, 1day = 30seconds
+    //Function to keep update numberof days, 1 day = 30 seconds
     private void DayTimer() {
         //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
         float dayLight = 0.5f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
         timerText.text = "Day: " + numberOfDays.ToString();
-        tempBackgroundColour.material.color = new Color(1*dayLight,1*dayLight,1*dayLight,1);
+        tempBackgroundColour.material.color = new Color(1*dayLight,1*dayLight,1*dayLight,1);//dayTime system
     }
 
     private void SpawnEnemy() {

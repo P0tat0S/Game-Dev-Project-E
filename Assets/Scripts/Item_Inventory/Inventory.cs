@@ -12,6 +12,7 @@ public class Inventory {
     public Inventory() {
         itemList = new List<Item>();
 
+        //TEMP Inventory starts with 1 Wood, 1 Stone and 1 Food
         AddItem(new Item { itemType = Item.ItemType.Wood, amount = 1});
         AddItem(new Item { itemType = Item.ItemType.Stone, amount = 1});
         AddItem(new Item { itemType = Item.ItemType.Food, amount = 1});
@@ -43,7 +44,7 @@ public class Inventory {
 
     //Method that removes an item by iterating through the inventory and finding the item
     public void RemoveItem(Item item) {
-        foreach (Item inventoryItem in itemList) {
+        foreach (Item inventoryItem in itemList.ToArray()) {
             if (inventoryItem.itemType == item.itemType) {
                 inventoryItem.amount -= 1;
             }
@@ -55,7 +56,7 @@ public class Inventory {
     }
     //Overloaded version of remove item by passing the specific item and the amount to remove
     public void RemoveItem(Item.ItemType type, int amount) {
-        foreach (Item inventoryItem in itemList) {
+        foreach (Item inventoryItem in itemList.ToArray()) {
             if (inventoryItem.itemType == type) {
                 inventoryItem.amount -= amount;
             }
@@ -65,9 +66,9 @@ public class Inventory {
             OnItemListChanged?.Invoke(this, EventArgs.Empty);
         }
     }
-
+    //Function that returns true or false when you search the inventory for an item and its specific amount
     public bool SearchItem(Item.ItemType type, int amount) {
-        foreach (Item inventoryItem in itemList) {
+        foreach (Item inventoryItem in itemList.ToArray()) {
             if (inventoryItem.itemType == type) {
                 if (inventoryItem.amount >= amount) {
                     Debug.Log("Item sufficient");
@@ -88,7 +89,7 @@ public class Inventory {
                 player.healthSystem.Heal(25);
                 RemoveItem(item);
                 break;
-            case Item.ItemType.Food:
+            case Item.ItemType.Food://To Implement
                 //player.hungerSystem.Heal(25);
                 RemoveItem(item);
                 break;

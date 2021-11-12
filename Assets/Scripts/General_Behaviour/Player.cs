@@ -36,9 +36,9 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
-        /*****************
-            Player Stats
-        ******************/
+        /**********************
+            Player Health Bar
+        **********************/
         Transform playerStatus = GameObject.Find("PlayerStatus").transform;
         //Create healthBar for the instance
         Transform healthBarTransform = Instantiate(pfHealthBar, playerStatus);
@@ -79,7 +79,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C)) if(ableToCraft) craftItem();//C to craft
         if (Input.GetKeyDown(KeyCode.R)) gameHandler.Restart();//R to restart
 
-        //TEMP Inventory Usage, pasing player and invoking actions     
+        //TEMP Inventory Usage, passing player and invoking actions and getting out of index errors    
         if (Input.GetKeyDown(KeyCode.Alpha1)) inventory.useItem(itemList[0], this);
         if (Input.GetKeyDown(KeyCode.Alpha2)) inventory.useItem(itemList[1], this);
         if (Input.GetKeyDown(KeyCode.Alpha3)) inventory.useItem(itemList[2], this);
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour {
 
     }
 
-    //Sword crafting TODO: better system, not really expandable
+    //TEMP Sword crafting TODO: better system, not really expandable
     public void craftItem() {
         if (inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1))
         {
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        //crafting out
+        //moving out of the station
         if(other.gameObject.tag == "CraftingStation") {
             GameObject panel = GameObject.Find("UI_Crafting(Clone)");
             Destroy(panel);

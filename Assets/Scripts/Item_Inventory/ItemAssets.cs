@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ItemAssets : MonoBehaviour {
 
+    /*************************************
+        Script to assign sprites to items
+    *************************************/
     public static ItemAssets Instance { get; private set; }
 
     private void Awake() {
