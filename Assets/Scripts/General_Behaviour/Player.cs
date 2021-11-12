@@ -48,16 +48,25 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
-        /*****************
-            Player Stats
-        ******************/
-        Transform playerStatus = GameObject.Find("PlayerStatus").transform;
+
+        Transform playerStatus = GameObject.Find("PlayerStatus").transform;//Get position for Bars
+
+        /*********************
+            Player Health Bar
+        *********************/
+
         //Create healthBar for the instance
         Transform healthBarTransform = Instantiate(pfHealthBar, playerStatus);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
+        
+        /**********************
+            Player Hunger Bar
+        **********************/
+        
         //Create hungerBar for the instance
         Transform hungerBarTransform = Instantiate(pfHungerBar, playerStatus);
+        hungerBarTransform.position = hungerBarTransform.position + new Vector3(0,-2);
         HungerBar hungerBar = hungerBarTransform.GetComponent<HungerBar>();
         hungerBar.Setup(hungerSystem);
 
