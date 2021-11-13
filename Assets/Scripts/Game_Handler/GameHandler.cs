@@ -27,6 +27,9 @@ public class GameHandler : MonoBehaviour {
     public Text timerText;
     public Text scoreText;
     private Renderer tempBackgroundColour;
+
+    //Reload
+    public string currentScene;
     
     private void Start() {
         //Get player gameobject and Script
@@ -89,6 +92,6 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void Restart() {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene(currentScene);
     }
 }

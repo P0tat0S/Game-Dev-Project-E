@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour {
     //Private variables
     private GameObject enemy;
+    private GameObject[] enemies;
     private Vector2 lastEnemyPosition;
 
     //Public variables
@@ -13,10 +14,11 @@ public class PlayerProjectile : MonoBehaviour {
     public float projectileLife;
 
     
-    void Start() { //Start is used to direct the arrow towards the enemy
+    private void Start() { //Start is used to direct the arrow towards the enemy
         //Get position of the enemy for the projectile
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if(enemy == null) enemy = GameObject.Find("GameHandler");//TEMP projectile guiding of the player to center
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        try { enemy = ClosestEnemy(enemies); }
+        catch (System.IndexOutOfRangeException) { enemy = GameObject.Find("GameHandler"); } //TEMP fix
         lastEnemyPosition = enemy.transform.position;
 
         //Rotate projectile once towards enemy
@@ -26,7 +28,7 @@ public class PlayerProjectile : MonoBehaviour {
     }
 
     
-    void FixedUpdate() { //Update to move the arrow and destroy the arrow on miss
+    private void FixedUpdate() { //Update to move the arrow and destroy the arrow on miss
         //Move towards the enemys last position
         transform.position = Vector2.MoveTowards(transform.position, lastEnemyPosition, speed * Time.deltaTime);
 
@@ -37,11 +39,26 @@ public class PlayerProjectile : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) { //Projectile interaccion on enemy collision
+    private void OnTriggerEnter2D(Collider2D other) { //Projectile interaccion on enemy collision
         if (other.CompareTag("Enemy")) {
             var health = other.GetComponent<EnemyBehaviour>().healthSystem;
             health.Damage(damage);
             Destroy(gameObject); 
         }
+    }
+
+    //Function that returns the closest enemy from a enemy array
+    private GameObject ClosestEnemy(GameObject[] enemies) {
+        var closestEnemy = enemies[0];
+        float lowestDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies) {
+            Vector3 vectorDifference = enemy.transform.position - transform.position;
+            float distanceBtwn = vectorDifference.sqrMagnitude;
+            if (distanceBtwn < lowestDistance) {
+                closestEnemy = enemy;
+                lowestDistance = distanceBtwn;
+            }
+        }
+        return closestEnemy;
     }
 }
