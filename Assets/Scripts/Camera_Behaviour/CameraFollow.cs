@@ -32,11 +32,11 @@ public class CameraFollow : MonoBehaviour {
     }
 
     private void Update() {//Update for Scroll wheel input
-        zoom -= Input.mouseScrollDelta.y * 0.5f;
-        if(zoom >= 16.0f) {
-            zoom = 16.0f;
-        } else if(zoom <= 8.0f) {
-            zoom = 8.0f;
+        zoom -= Input.mouseScrollDelta.y * 0.25f;
+        if(zoom >= 12.0f) {
+            zoom = 12.0f;
+        } else if(zoom <= 4.0f) {
+            zoom = 4.0f;
         }
     }
 }

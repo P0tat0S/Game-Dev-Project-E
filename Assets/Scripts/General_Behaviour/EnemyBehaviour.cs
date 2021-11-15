@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour {
         //Start Health System of the enemy with selected health
         healthSystem = new HealthSystem(health);
         //Create the healthbar position it and scale it
-        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 1.6f), Quaternion.identity, this.transform);
+        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 0.8f), Quaternion.identity, this.transform);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 
@@ -45,7 +45,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
         //Shooting/Attacking
         if (TimeBtwShots <= 0) {
-            Instantiate(Projectile, transform.position, Quaternion.identity);
+            Instantiate(Projectile, transform);
             TimeBtwShots = StartTimeBtwShots;
         } else {
             TimeBtwShots -= Time.deltaTime;

@@ -26,7 +26,12 @@ public class GameHandler : MonoBehaviour {
     private int score = 0;
     public Text timerText;
     public Text scoreText;
-    private Renderer tempBackgroundColour;
+    private Renderer backgroundColor;
+
+    /**********
+        Tiles
+    **********/
+    public Renderer tile_water;
 
     //Reload
     public string currentScene;
@@ -36,23 +41,22 @@ public class GameHandler : MonoBehaviour {
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<Player>();
 
-        //Get tempBackground renderer
-        tempBackgroundColour = GameObject.Find("temp_Background").GetComponent<Renderer>();
+        //Get renderer of a tile prefabs
+        backgroundColor = tile_water;
 
         EnemySpawnTimer();//Start Spawning enemies
         UpdateScore(0);
     }
 
-    private void FixedUpdate() {//Day system and enemy Spawn
+    private void Update() {
+        //Day system and enemy Spawn
         if (Time.timeSinceLevelLoad >= enemySpawnTime) {
             SpawnEnemy();
             EnemySpawnTimer();
         }
-        DayTimer();
-    }
-
-    private void Update() {//Inputs
+        //Inputs
         if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
+        DayTimer();
     }
  
     //Function to Spawn enemies between 3 to 6 seconds and up to 1 and 3 seconds
@@ -65,10 +69,11 @@ public class GameHandler : MonoBehaviour {
     //Function to keep update numberof days, 1 day = 30 seconds
     private void DayTimer() {
         //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
-        float dayLight = 0.5f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
+        float dayLight = 0.6f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
         timerText.text = "Day: " + numberOfDays.ToString();
-        tempBackgroundColour.material.color = new Color(1*dayLight,1*dayLight,1*dayLight,1);//dayTime system
+        float clampedDayLight = Mathf.Clamp(dayLight, 0.1f, 1.0f);
+        backgroundColor.sharedMaterial.color = new Color(clampedDayLight, clampedDayLight, clampedDayLight, 1);//dayTime system
     }
 
     private void SpawnEnemy() {

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     public GameObject UI_Crafting;
   
     //Movement Variables
-    private const float moveSpeed = 10f;
+    private const float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector3 movement;
     private bool dashPressed;
@@ -55,9 +55,7 @@ public class Player : MonoBehaviour {
         //Inventory
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
-        if(UI_Crafting == null) {
-            UI_Crafting = GameObject.Find("UI_Inventory");
-        }
+        if(UI_Crafting == null) UI_Crafting = GameObject.Find("UI_Inventory");
     }
 
     // Update is called once per frame
@@ -97,7 +95,7 @@ public class Player : MonoBehaviour {
         rb.velocity = movement * moveSpeed;
 
         if(dashPressed) {//dash action
-            float dashSpeed = 5f;
+            float dashSpeed = 2.5f;
             rb.MovePosition(transform.position + movement * dashSpeed);
             nextDash = Time.time + dashCooldown;
             dashPressed = false;
@@ -105,13 +103,12 @@ public class Player : MonoBehaviour {
 
         if(attackPressed) {//attack action
             spriteRenderer.sprite = newSprite;
-            Instantiate(Projectile, transform.position, Quaternion.identity);
+            Instantiate(Projectile, transform);
             nextAttack = Time.time + attackCooldown;
             attackPressed = false;
         }
-
-        //Check if dead
-        if (healthSystem.GetHealth() <= 0){
+        
+        if (healthSystem.GetHealth() <= 0) { //Check if dead
             gameHandler.ShowGameOver();
             Destroy(gameObject);
         }
@@ -120,8 +117,7 @@ public class Player : MonoBehaviour {
 
     //TEMP Sword crafting TODO: better system, not really expandable
     public void craftItem() {
-        if (inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1))
-        {
+        if (inventory.SearchItem(Item.ItemType.Stone, 2) && inventory.SearchItem(Item.ItemType.Wood, 1)) {
             Transform temp = GameObject.Find("CraftingOutput").transform;
             Debug.Log("You have the necessary items");
             inventory.RemoveItem(Item.ItemType.Stone, 2);
