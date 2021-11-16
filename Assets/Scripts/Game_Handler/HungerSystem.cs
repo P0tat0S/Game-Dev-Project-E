@@ -2,19 +2,19 @@ using System;
 
 public class HungerSystem{
     public event EventHandler OnHungerChanged;
-    private int hunger;
-    private int hungerMax;
+    private float hunger;
+    private float hungerMax;
 
 
     /*********************
         Helper Functions
     **********************/
-    public HungerSystem(int hungerMax) {//Constructor
+    public HungerSystem(float hungerMax) {//Constructor
         this.hungerMax = hungerMax;
         hunger = hungerMax;
     }
 
-    public int GetHunger(){
+    public float GetHunger(){
         return hunger;
     }
 
@@ -22,14 +22,14 @@ public class HungerSystem{
         return (float)hunger / hungerMax;
     }
 
-    public void Starve(int starveAmount){
+    public void Starve(float starveAmount){
         hunger -= starveAmount;
         if (hunger < 0) hunger = 0;
 
         if (OnHungerChanged != null) OnHungerChanged(this, EventArgs.Empty);
     }
 
-    public void Eat(int eatAmount){
+    public void Eat(float eatAmount){
         hunger += eatAmount;
         if (hunger > hungerMax) hunger = hungerMax;
 

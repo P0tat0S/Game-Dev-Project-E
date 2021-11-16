@@ -111,6 +111,7 @@ public class Player : MonoBehaviour {
             float dashSpeed = 5f;
             rb.MovePosition(transform.position + movement * dashSpeed);
             nextDash = Time.time + dashCooldown;
+            hungerSystem.Starve(2);
             dashPressed = false;
         }
 
@@ -118,11 +119,12 @@ public class Player : MonoBehaviour {
             spriteRenderer.sprite = newSprite;
             Instantiate(Projectile, transform.position, Quaternion.identity);
             nextAttack = Time.time + attackCooldown;
+            hungerSystem.Starve(1);
             attackPressed = false;
         }
 
         //Check if dead
-        if (healthSystem.GetHealth() <= 0){
+        if (healthSystem.GetHealth() == 0 || hungerSystem.GetHunger() == 0){
             gameHandler.ShowGameOver();
             Destroy(gameObject);
         }
