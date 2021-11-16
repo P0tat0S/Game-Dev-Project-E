@@ -56,6 +56,7 @@ public class EnemyBehaviour : MonoBehaviour {
             Destroy(gameObject);
             var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
             gameHandler.UpdateScore(scoreOnKill);
+            gameHandler.dropItem(this.transform);
         }
     }
 }
