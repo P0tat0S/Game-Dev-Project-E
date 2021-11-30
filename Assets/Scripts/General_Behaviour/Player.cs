@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
         **********************/
         Transform hungerBarTransform = Instantiate(pfHungerBar, playerStatus);
         //Create hungerBar for the instance
-        hungerBarTransform.position = hungerBarTransform.position + new Vector3(0,-2);
+        hungerBarTransform.position = hungerBarTransform.position + new Vector3(0f,-0.25f);
         HungerBar hungerBar = hungerBarTransform.GetComponent<HungerBar>();
         hungerBar.Setup(hungerSystem);
 

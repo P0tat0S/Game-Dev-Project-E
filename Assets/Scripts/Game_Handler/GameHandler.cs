@@ -21,7 +21,6 @@ public class GameHandler : MonoBehaviour {
     public GameObject stone;
     private float enemySpawnTime;
     private float resourceSpawnTime;
-    public float ResourceLife;
     private int numberOfDays;
     //Enemy drop
     public GameObject item;
@@ -63,11 +62,6 @@ public class GameHandler : MonoBehaviour {
             SpawnResource();
             ResourceSpawnTimer();
         }
-        if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
-        DayTimer();
-    }
-
-    private void Update() {//Inputs
         if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
         DayTimer();
     }
