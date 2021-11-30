@@ -1211,8 +1211,13 @@ MonoBehaviour:
   gameOverScreen: {fileID: 8139920989065226473, guid: 87cfd4f356ed8de4fb94688b4d4a4703, type: 3}
   knight: {fileID: 4014636961990557196, guid: 784b2f1df1a10df49b38fab101b31545, type: 3}
   archer: {fileID: 2739487577064298539, guid: 92058b5e815b34d4782d9929dbd1c1a0, type: 3}
+  tree: {fileID: 8490434896007765537, guid: 01bdc7d5b2d4a784a858218d3c897def, type: 3}
+  stone: {fileID: 1789373972121591515, guid: c38aff1cb5591134182155411d8134eb, type: 3}
+  ResourceLife: 0
+  item: {fileID: 3973278907797388084, guid: f3be9d8010b819b4dbeda82bf0c36cae, type: 3}
   timerText: {fileID: 1458282834}
   scoreText: {fileID: 1564530942}
+  currentScene: Ameer
 --- !u!4 &1207321611
 Transform:
   m_ObjectHideFlags: 0

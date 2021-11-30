@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7619571192672899617}
   - component: {fileID: 4561793785406598021}
   - component: {fileID: 9144684003339502579}
+  - component: {fileID: 7064221052186244698}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -122,3 +123,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7064221052186244698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490434896007765537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acdb5dbe7a022f47af936b866af4df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourceLife: 3

@@ -21,6 +21,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject stone;
     private float enemySpawnTime;
     private float resourceSpawnTime;
+    public float ResourceLife;
     private int numberOfDays;
     //Enemy drop
     public GameObject item;
@@ -98,15 +99,15 @@ public class GameHandler : MonoBehaviour {
     {
         //Vector for random position in the map
         Vector3 position = new Vector3(Random.Range(-19.0f, 19.0f), Random.Range(-11.0f, 11.0f), 0.0f);
-        if (Random.Range(0.0f, 1.0f) > 0.33f)
-        {//Spawn Knight with 66% chance
+        if (Random.Range(0.0f, 1.0f) > 0.33f){//Spawn tree with 66% chance
             Instantiate(tree, position, Quaternion.identity);
         }
-        else
-        {//Spawn Archer with 33% chance
+        else{//Spawn stone with 33% chance
             Instantiate(stone, position, Quaternion.identity);
         }
     }
+
+
 
     
 
@@ -125,7 +126,7 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void dropItem(Transform position) {
-        //Code for chance to drop item
+        //chance to drop item
         if(Random.value > 0.7) {        
             Instantiate(item, position);
         }
