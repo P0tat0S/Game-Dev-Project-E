@@ -10,7 +10,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float moveSpeed;
 
     //Enemy Stats
-    public int health;
+    public float health;
     public Transform pfHealthBar;
     public HealthSystem healthSystem;
     public int scoreOnKill;
@@ -56,6 +56,7 @@ public class EnemyBehaviour : MonoBehaviour {
             Destroy(gameObject);
             var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
             gameHandler.UpdateScore(scoreOnKill);
+            gameHandler.dropItem(this.transform);
         }
     }
 }

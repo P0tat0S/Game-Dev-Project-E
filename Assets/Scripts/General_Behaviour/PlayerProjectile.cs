@@ -10,9 +10,8 @@ public class PlayerProjectile : MonoBehaviour {
 
     //Public variables
     public float speed;
-    public int damage;
+    public float damage;
     public float projectileLife;
-
     
     private void Start() { //Start is used to direct the arrow towards the enemy
         //Get position of the enemy for the projectile
@@ -26,7 +25,6 @@ public class PlayerProjectile : MonoBehaviour {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         this.GetComponent<Rigidbody2D>().rotation = angle;
     }
-
     
     private void FixedUpdate() { //Update to move the arrow and destroy the arrow on miss
         //Move towards the enemys last position
@@ -43,7 +41,7 @@ public class PlayerProjectile : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             var health = other.GetComponent<EnemyBehaviour>().healthSystem;
             health.Damage(damage);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 
