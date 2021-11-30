@@ -17,8 +17,14 @@ public class GameHandler : MonoBehaviour {
     *******************/
     public GameObject knight;
     public GameObject archer;
+    public GameObject tree;
+    public GameObject stone;
     private float enemySpawnTime;
+    private float resourceSpawnTime;
+    public float ResourceLife;
     private int numberOfDays;
+    //Enemy drop
+    public GameObject item;
 
     /**************
         Counters
@@ -27,6 +33,7 @@ public class GameHandler : MonoBehaviour {
     public Text timerText;
     public Text scoreText;
     private Renderer tempBackgroundColour;
+    public string currentScene;
 
     private void Start() {
         //Get player gameobject and Script
@@ -40,11 +47,17 @@ public class GameHandler : MonoBehaviour {
         UpdateScore(0);
     }
 
-    private void FixedUpdate() {//Day system and enemy Spawn
+    private void Update() {//Day system and enemy Spawn
         if (Time.timeSinceLevelLoad >= enemySpawnTime) {
             SpawnEnemy();
             EnemySpawnTimer();
         }
+        if (Time.timeSinceLevelLoad >= resourceSpawnTime)
+        {
+            SpawnResource();
+            ResourceSpawnTimer();
+        }
+        if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
         DayTimer();
     }
 
@@ -57,6 +70,11 @@ public class GameHandler : MonoBehaviour {
         float growth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/11.0f);// From 0 to 2/3 being the max
         float delay = Random.Range(3.0f*growth,6.0f*growth);
         enemySpawnTime = Time.timeSinceLevelLoad + delay;//Reset Timer
+    }
+
+    private void ResourceSpawnTimer(){
+        float delay = Random.Range(5,15);
+        resourceSpawnTime = Time.timeSinceLevelLoad + delay;
     }
 
     //Function to keep update numberof days, 1 day = 30 seconds
@@ -79,6 +97,22 @@ public class GameHandler : MonoBehaviour {
         }
     }
 
+    private void SpawnResource()
+    {
+        //Vector for random position in the map
+        Vector3 position = new Vector3(Random.Range(-19.0f, 19.0f), Random.Range(-11.0f, 11.0f), 0.0f);
+        if (Random.Range(0.0f, 1.0f) > 0.33f){//Spawn tree with 66% chance
+            Instantiate(tree, position, Quaternion.identity);
+        }
+        else{//Spawn stone with 33% chance
+            Instantiate(stone, position, Quaternion.identity);
+        }
+    }
+
+
+
+    
+
     public void UpdateScore(int points) {
         score += points;
         scoreText.text = "Score: " + score.ToString();
@@ -90,6 +124,13 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void Restart() {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void dropItem(Transform position) {
+        //chance to drop item
+        if(Random.value > 0.7) {        
+            Instantiate(item, position);
+        }
     }
 }
