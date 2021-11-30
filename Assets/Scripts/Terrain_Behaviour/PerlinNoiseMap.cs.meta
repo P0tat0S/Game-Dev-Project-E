@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: be7b7acf0fb536a4db9bf40915ce86dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tile_water: {fileID: 4518992428515003750, guid: 12ec954a6ad7ef743ac52cbbe83e5bc0, type: 3}
+  - tile_dirt: {fileID: 3756401956324922084, guid: ac4de982900c09c43af2879aa4917aef, type: 3}
+  - tile_grass: {fileID: 1841485308967400846, guid: 28dce110d3ba10a448a1856bf27c7a7c, type: 3}
+  - tile_grass2: {fileID: 9016004652167405508, guid: 1b103a64d78bd09499608afef6fdb1ee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

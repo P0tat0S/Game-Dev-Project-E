@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 [Serializable]
 public class Item {
-
     //Define all types of items in an Enum
     public enum ItemType {
         Wood,
