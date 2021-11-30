@@ -6,19 +6,19 @@ public class PerlinNoiseMap : MonoBehaviour {
     Dictionary<int, GameObject> tileset;//Pair id code with Tile Prefab
     Dictionary<int, GameObject> tile_groups;//Just to organise in hierarchy
     //Tiles
-    public GameObject tile_water;
-    public GameObject tile_dirt;
-    public GameObject tile_grass;
-    public GameObject tile_grass2;
+    public GameObject tile_liquid;
+    public GameObject tile_postLiquid;
+    public GameObject tile_land;
+    public GameObject tile_postLand;
     //Map Variables
-    private const int map_width =  256;
-    private const int map_height = 256;
+    private const int map_width =  100;
+    private const int map_height = 100;
 
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
     //Recommended value 4-20
-    float magnification = 18.0f;
+    float magnification = 14.0f;
 
     //Random "Seed" in each generation
     int x_offset;//Decrease moves left, Increase moves right
@@ -38,10 +38,10 @@ public class PerlinNoiseMap : MonoBehaviour {
     //Creation of tilest dictionary and assigns ID code to prefabs, ordered by elevation
     private void CreateTileset() {
         tileset = new Dictionary<int, GameObject>();
-        tileset.Add(0, tile_water);
-        tileset.Add(1, tile_dirt);
-        tileset.Add(2, tile_grass);
-        tileset.Add(3, tile_grass2);
+        tileset.Add(0, tile_liquid);
+        tileset.Add(1, tile_postLiquid);
+        tileset.Add(2, tile_land);
+        tileset.Add(3, tile_postLand);
     }
 
     //Sets the tiles in organised groups in hierarchy

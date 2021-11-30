@@ -689,6 +689,27 @@ TextureImporter:
   - first:
       213: 2949495682358884028
     second: RPGpack_sheet_228
+  - first:
+      213: 1792334654881029672
+    second: RPGpack_sheet_229
+  - first:
+      213: -8704498069964310574
+    second: RPGpack_sheet_230
+  - first:
+      213: 7199484490973594934
+    second: RPGpack_sheet_231
+  - first:
+      213: 8473586459572694618
+    second: RPGpack_sheet_232
+  - first:
+      213: -3070182804089553163
+    second: RPGpack_sheet_233
+  - first:
+      213: 5313043511430516050
+    second: RPGpack_sheet_234
+  - first:
+      213: -2634470554600275009
+    second: RPGpack_sheet_235
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1741,7 +1762,7 @@ TextureImporter:
       name: RPGpack_sheet_44
       rect:
         serializedVersion: 2
-        x: 640
+        x: 512
         y: 640
         width: 64
         height: 64
@@ -1762,7 +1783,7 @@ TextureImporter:
       name: RPGpack_sheet_45
       rect:
         serializedVersion: 2
-        x: 704
+        x: 576
         y: 640
         width: 64
         height: 64
@@ -1783,7 +1804,7 @@ TextureImporter:
       name: RPGpack_sheet_46
       rect:
         serializedVersion: 2
-        x: 768
+        x: 640
         y: 640
         width: 64
         height: 64
@@ -1804,8 +1825,8 @@ TextureImporter:
       name: RPGpack_sheet_47
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
+        x: 704
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1825,8 +1846,8 @@ TextureImporter:
       name: RPGpack_sheet_48
       rect:
         serializedVersion: 2
-        x: 64
-        y: 576
+        x: 768
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1846,8 +1867,8 @@ TextureImporter:
       name: RPGpack_sheet_49
       rect:
         serializedVersion: 2
-        x: 128
-        y: 576
+        x: 832
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1867,8 +1888,8 @@ TextureImporter:
       name: RPGpack_sheet_50
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
+        x: 896
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1888,8 +1909,8 @@ TextureImporter:
       name: RPGpack_sheet_51
       rect:
         serializedVersion: 2
-        x: 256
-        y: 576
+        x: 960
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1909,8 +1930,8 @@ TextureImporter:
       name: RPGpack_sheet_52
       rect:
         serializedVersion: 2
-        x: 320
-        y: 576
+        x: 1024
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1930,8 +1951,8 @@ TextureImporter:
       name: RPGpack_sheet_53
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
+        x: 1088
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -1951,7 +1972,7 @@ TextureImporter:
       name: RPGpack_sheet_54
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 576
         width: 64
         height: 64
@@ -1972,7 +1993,7 @@ TextureImporter:
       name: RPGpack_sheet_55
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 576
         width: 64
         height: 64
@@ -1993,7 +2014,7 @@ TextureImporter:
       name: RPGpack_sheet_56
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 576
         width: 64
         height: 64
@@ -2014,7 +2035,7 @@ TextureImporter:
       name: RPGpack_sheet_57
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 576
         width: 64
         height: 64
@@ -2035,7 +2056,7 @@ TextureImporter:
       name: RPGpack_sheet_58
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 576
         width: 64
         height: 64
@@ -2056,7 +2077,7 @@ TextureImporter:
       name: RPGpack_sheet_59
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 576
         width: 64
         height: 64
@@ -2077,7 +2098,7 @@ TextureImporter:
       name: RPGpack_sheet_60
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 576
         width: 64
         height: 64
@@ -2098,7 +2119,7 @@ TextureImporter:
       name: RPGpack_sheet_61
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 576
         width: 64
         height: 64
@@ -2119,7 +2140,7 @@ TextureImporter:
       name: RPGpack_sheet_62
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 576
         width: 64
         height: 64
@@ -2140,7 +2161,7 @@ TextureImporter:
       name: RPGpack_sheet_63
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 576
         width: 64
         height: 64
@@ -2161,7 +2182,7 @@ TextureImporter:
       name: RPGpack_sheet_64
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 576
         width: 64
         height: 64
@@ -2182,8 +2203,8 @@ TextureImporter:
       name: RPGpack_sheet_65
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
+        x: 704
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2203,8 +2224,8 @@ TextureImporter:
       name: RPGpack_sheet_66
       rect:
         serializedVersion: 2
-        x: 64
-        y: 512
+        x: 768
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2224,8 +2245,8 @@ TextureImporter:
       name: RPGpack_sheet_67
       rect:
         serializedVersion: 2
-        x: 128
-        y: 512
+        x: 832
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2245,8 +2266,8 @@ TextureImporter:
       name: RPGpack_sheet_68
       rect:
         serializedVersion: 2
-        x: 192
-        y: 512
+        x: 896
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2266,8 +2287,8 @@ TextureImporter:
       name: RPGpack_sheet_69
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 960
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2287,8 +2308,8 @@ TextureImporter:
       name: RPGpack_sheet_70
       rect:
         serializedVersion: 2
-        x: 320
-        y: 512
+        x: 1024
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2308,8 +2329,8 @@ TextureImporter:
       name: RPGpack_sheet_71
       rect:
         serializedVersion: 2
-        x: 384
-        y: 512
+        x: 1088
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -2329,7 +2350,7 @@ TextureImporter:
       name: RPGpack_sheet_72
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 512
         width: 64
         height: 64
@@ -2350,7 +2371,7 @@ TextureImporter:
       name: RPGpack_sheet_73
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 512
         width: 64
         height: 64
@@ -2371,7 +2392,7 @@ TextureImporter:
       name: RPGpack_sheet_74
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 512
         width: 64
         height: 64
@@ -2392,7 +2413,7 @@ TextureImporter:
       name: RPGpack_sheet_75
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 512
         width: 64
         height: 64
@@ -2413,7 +2434,7 @@ TextureImporter:
       name: RPGpack_sheet_76
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 512
         width: 64
         height: 64
@@ -2434,7 +2455,7 @@ TextureImporter:
       name: RPGpack_sheet_77
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 512
         width: 64
         height: 64
@@ -2455,7 +2476,7 @@ TextureImporter:
       name: RPGpack_sheet_78
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 512
         width: 64
         height: 64
@@ -2476,7 +2497,7 @@ TextureImporter:
       name: RPGpack_sheet_79
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 512
         width: 64
         height: 64
@@ -2497,7 +2518,7 @@ TextureImporter:
       name: RPGpack_sheet_80
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 512
         width: 64
         height: 64
@@ -2518,7 +2539,7 @@ TextureImporter:
       name: RPGpack_sheet_81
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 512
         width: 64
         height: 64
@@ -2539,7 +2560,7 @@ TextureImporter:
       name: RPGpack_sheet_82
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 512
         width: 64
         height: 64
@@ -2560,8 +2581,8 @@ TextureImporter:
       name: RPGpack_sheet_83
       rect:
         serializedVersion: 2
-        x: 0
-        y: 448
+        x: 704
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2581,8 +2602,8 @@ TextureImporter:
       name: RPGpack_sheet_84
       rect:
         serializedVersion: 2
-        x: 64
-        y: 448
+        x: 768
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2602,8 +2623,8 @@ TextureImporter:
       name: RPGpack_sheet_85
       rect:
         serializedVersion: 2
-        x: 128
-        y: 448
+        x: 832
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2623,8 +2644,8 @@ TextureImporter:
       name: RPGpack_sheet_86
       rect:
         serializedVersion: 2
-        x: 192
-        y: 448
+        x: 896
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2644,8 +2665,8 @@ TextureImporter:
       name: RPGpack_sheet_87
       rect:
         serializedVersion: 2
-        x: 256
-        y: 448
+        x: 960
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2665,8 +2686,8 @@ TextureImporter:
       name: RPGpack_sheet_88
       rect:
         serializedVersion: 2
-        x: 320
-        y: 448
+        x: 1024
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2686,8 +2707,8 @@ TextureImporter:
       name: RPGpack_sheet_89
       rect:
         serializedVersion: 2
-        x: 384
-        y: 448
+        x: 1088
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -2707,7 +2728,7 @@ TextureImporter:
       name: RPGpack_sheet_90
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 448
         width: 64
         height: 64
@@ -2728,7 +2749,7 @@ TextureImporter:
       name: RPGpack_sheet_91
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 448
         width: 64
         height: 64
@@ -2749,7 +2770,7 @@ TextureImporter:
       name: RPGpack_sheet_92
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 448
         width: 64
         height: 64
@@ -2770,7 +2791,7 @@ TextureImporter:
       name: RPGpack_sheet_93
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 448
         width: 64
         height: 64
@@ -2791,7 +2812,7 @@ TextureImporter:
       name: RPGpack_sheet_94
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 448
         width: 64
         height: 64
@@ -2812,7 +2833,7 @@ TextureImporter:
       name: RPGpack_sheet_95
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 448
         width: 64
         height: 64
@@ -2833,7 +2854,7 @@ TextureImporter:
       name: RPGpack_sheet_96
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 448
         width: 64
         height: 64
@@ -2854,7 +2875,7 @@ TextureImporter:
       name: RPGpack_sheet_97
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 448
         width: 64
         height: 64
@@ -2875,7 +2896,7 @@ TextureImporter:
       name: RPGpack_sheet_98
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 448
         width: 64
         height: 64
@@ -2896,7 +2917,7 @@ TextureImporter:
       name: RPGpack_sheet_99
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 448
         width: 64
         height: 64
@@ -2917,7 +2938,7 @@ TextureImporter:
       name: RPGpack_sheet_100
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 448
         width: 64
         height: 64
@@ -2938,8 +2959,8 @@ TextureImporter:
       name: RPGpack_sheet_101
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 704
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -2959,8 +2980,8 @@ TextureImporter:
       name: RPGpack_sheet_102
       rect:
         serializedVersion: 2
-        x: 64
-        y: 384
+        x: 768
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -2980,8 +3001,8 @@ TextureImporter:
       name: RPGpack_sheet_103
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
+        x: 832
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -3001,8 +3022,8 @@ TextureImporter:
       name: RPGpack_sheet_104
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
+        x: 896
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -3022,8 +3043,8 @@ TextureImporter:
       name: RPGpack_sheet_105
       rect:
         serializedVersion: 2
-        x: 256
-        y: 384
+        x: 960
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -3043,8 +3064,8 @@ TextureImporter:
       name: RPGpack_sheet_106
       rect:
         serializedVersion: 2
-        x: 320
-        y: 384
+        x: 1024
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -3064,8 +3085,8 @@ TextureImporter:
       name: RPGpack_sheet_107
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
+        x: 1088
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -3085,7 +3106,7 @@ TextureImporter:
       name: RPGpack_sheet_108
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 384
         width: 64
         height: 64
@@ -3106,7 +3127,7 @@ TextureImporter:
       name: RPGpack_sheet_109
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 384
         width: 64
         height: 64
@@ -3127,7 +3148,7 @@ TextureImporter:
       name: RPGpack_sheet_110
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 384
         width: 64
         height: 64
@@ -3148,7 +3169,7 @@ TextureImporter:
       name: RPGpack_sheet_111
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 384
         width: 64
         height: 64
@@ -3169,7 +3190,7 @@ TextureImporter:
       name: RPGpack_sheet_112
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 384
         width: 64
         height: 64
@@ -3190,7 +3211,7 @@ TextureImporter:
       name: RPGpack_sheet_113
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 384
         width: 64
         height: 64
@@ -3211,7 +3232,7 @@ TextureImporter:
       name: RPGpack_sheet_114
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 384
         width: 64
         height: 64
@@ -3232,7 +3253,7 @@ TextureImporter:
       name: RPGpack_sheet_115
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 384
         width: 64
         height: 64
@@ -3253,7 +3274,7 @@ TextureImporter:
       name: RPGpack_sheet_116
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 384
         width: 64
         height: 64
@@ -3274,7 +3295,7 @@ TextureImporter:
       name: RPGpack_sheet_117
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 384
         width: 64
         height: 64
@@ -3295,7 +3316,7 @@ TextureImporter:
       name: RPGpack_sheet_118
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 384
         width: 64
         height: 64
@@ -3316,8 +3337,8 @@ TextureImporter:
       name: RPGpack_sheet_119
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
+        x: 704
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3337,8 +3358,8 @@ TextureImporter:
       name: RPGpack_sheet_120
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
+        x: 768
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3358,8 +3379,8 @@ TextureImporter:
       name: RPGpack_sheet_121
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
+        x: 832
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3379,8 +3400,8 @@ TextureImporter:
       name: RPGpack_sheet_122
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
+        x: 896
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3400,8 +3421,8 @@ TextureImporter:
       name: RPGpack_sheet_123
       rect:
         serializedVersion: 2
-        x: 256
-        y: 320
+        x: 960
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3421,8 +3442,8 @@ TextureImporter:
       name: RPGpack_sheet_124
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320
+        x: 1024
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3442,8 +3463,8 @@ TextureImporter:
       name: RPGpack_sheet_125
       rect:
         serializedVersion: 2
-        x: 384
-        y: 320
+        x: 1088
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -3463,7 +3484,7 @@ TextureImporter:
       name: RPGpack_sheet_126
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 320
         width: 64
         height: 64
@@ -3484,7 +3505,7 @@ TextureImporter:
       name: RPGpack_sheet_127
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 320
         width: 64
         height: 64
@@ -3505,7 +3526,7 @@ TextureImporter:
       name: RPGpack_sheet_128
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 320
         width: 64
         height: 64
@@ -3526,7 +3547,7 @@ TextureImporter:
       name: RPGpack_sheet_129
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 320
         width: 64
         height: 64
@@ -3547,7 +3568,7 @@ TextureImporter:
       name: RPGpack_sheet_130
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 320
         width: 64
         height: 64
@@ -3568,7 +3589,7 @@ TextureImporter:
       name: RPGpack_sheet_131
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 320
         width: 64
         height: 64
@@ -3589,7 +3610,7 @@ TextureImporter:
       name: RPGpack_sheet_132
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 320
         width: 64
         height: 64
@@ -3610,7 +3631,7 @@ TextureImporter:
       name: RPGpack_sheet_133
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 320
         width: 64
         height: 64
@@ -3631,7 +3652,7 @@ TextureImporter:
       name: RPGpack_sheet_134
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 320
         width: 64
         height: 64
@@ -3652,7 +3673,7 @@ TextureImporter:
       name: RPGpack_sheet_135
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 320
         width: 64
         height: 64
@@ -3673,7 +3694,7 @@ TextureImporter:
       name: RPGpack_sheet_136
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 320
         width: 64
         height: 64
@@ -3694,8 +3715,8 @@ TextureImporter:
       name: RPGpack_sheet_137
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 704
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3715,8 +3736,8 @@ TextureImporter:
       name: RPGpack_sheet_138
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 768
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3736,8 +3757,8 @@ TextureImporter:
       name: RPGpack_sheet_139
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 832
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3757,8 +3778,8 @@ TextureImporter:
       name: RPGpack_sheet_140
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 896
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3778,8 +3799,8 @@ TextureImporter:
       name: RPGpack_sheet_141
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 960
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3799,8 +3820,8 @@ TextureImporter:
       name: RPGpack_sheet_142
       rect:
         serializedVersion: 2
-        x: 320
-        y: 256
+        x: 1024
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3820,8 +3841,8 @@ TextureImporter:
       name: RPGpack_sheet_143
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 1088
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -3841,7 +3862,7 @@ TextureImporter:
       name: RPGpack_sheet_144
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 256
         width: 64
         height: 64
@@ -3862,7 +3883,7 @@ TextureImporter:
       name: RPGpack_sheet_145
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 256
         width: 64
         height: 64
@@ -3883,7 +3904,7 @@ TextureImporter:
       name: RPGpack_sheet_146
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 256
         width: 64
         height: 64
@@ -3904,7 +3925,7 @@ TextureImporter:
       name: RPGpack_sheet_147
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 256
         width: 64
         height: 64
@@ -3925,7 +3946,7 @@ TextureImporter:
       name: RPGpack_sheet_148
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 256
         width: 64
         height: 64
@@ -3946,7 +3967,7 @@ TextureImporter:
       name: RPGpack_sheet_149
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 256
         width: 64
         height: 64
@@ -3967,7 +3988,7 @@ TextureImporter:
       name: RPGpack_sheet_150
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 256
         width: 64
         height: 64
@@ -3988,7 +4009,7 @@ TextureImporter:
       name: RPGpack_sheet_151
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 256
         width: 64
         height: 64
@@ -4009,7 +4030,7 @@ TextureImporter:
       name: RPGpack_sheet_152
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 256
         width: 64
         height: 64
@@ -4030,7 +4051,7 @@ TextureImporter:
       name: RPGpack_sheet_153
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 256
         width: 64
         height: 64
@@ -4051,7 +4072,7 @@ TextureImporter:
       name: RPGpack_sheet_154
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 256
         width: 64
         height: 64
@@ -4072,8 +4093,8 @@ TextureImporter:
       name: RPGpack_sheet_155
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 704
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4093,8 +4114,8 @@ TextureImporter:
       name: RPGpack_sheet_156
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 768
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4114,8 +4135,8 @@ TextureImporter:
       name: RPGpack_sheet_157
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 832
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4135,8 +4156,8 @@ TextureImporter:
       name: RPGpack_sheet_158
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 896
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4156,8 +4177,8 @@ TextureImporter:
       name: RPGpack_sheet_159
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 960
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4177,8 +4198,8 @@ TextureImporter:
       name: RPGpack_sheet_160
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
+        x: 1024
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4198,8 +4219,8 @@ TextureImporter:
       name: RPGpack_sheet_161
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
+        x: 1088
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -4219,7 +4240,7 @@ TextureImporter:
       name: RPGpack_sheet_162
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 192
         width: 64
         height: 64
@@ -4240,7 +4261,7 @@ TextureImporter:
       name: RPGpack_sheet_163
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 192
         width: 64
         height: 64
@@ -4261,7 +4282,7 @@ TextureImporter:
       name: RPGpack_sheet_164
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 192
         width: 64
         height: 64
@@ -4282,7 +4303,7 @@ TextureImporter:
       name: RPGpack_sheet_165
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 192
         width: 64
         height: 64
@@ -4303,7 +4324,7 @@ TextureImporter:
       name: RPGpack_sheet_166
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 192
         width: 64
         height: 64
@@ -4324,7 +4345,7 @@ TextureImporter:
       name: RPGpack_sheet_167
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 192
         width: 64
         height: 64
@@ -4345,7 +4366,7 @@ TextureImporter:
       name: RPGpack_sheet_168
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 192
         width: 64
         height: 64
@@ -4366,7 +4387,7 @@ TextureImporter:
       name: RPGpack_sheet_169
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 192
         width: 64
         height: 64
@@ -4387,7 +4408,7 @@ TextureImporter:
       name: RPGpack_sheet_170
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 192
         width: 64
         height: 64
@@ -4408,7 +4429,7 @@ TextureImporter:
       name: RPGpack_sheet_171
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 192
         width: 64
         height: 64
@@ -4429,7 +4450,7 @@ TextureImporter:
       name: RPGpack_sheet_172
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 192
         width: 64
         height: 64
@@ -4450,7 +4471,7 @@ TextureImporter:
       name: RPGpack_sheet_173
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 704
         y: 192
         width: 64
         height: 64
@@ -4471,7 +4492,7 @@ TextureImporter:
       name: RPGpack_sheet_174
       rect:
         serializedVersion: 2
-        x: 1216
+        x: 768
         y: 192
         width: 64
         height: 64
@@ -4492,8 +4513,8 @@ TextureImporter:
       name: RPGpack_sheet_175
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 832
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4513,8 +4534,8 @@ TextureImporter:
       name: RPGpack_sheet_176
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 896
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4534,8 +4555,8 @@ TextureImporter:
       name: RPGpack_sheet_177
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 960
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4555,8 +4576,8 @@ TextureImporter:
       name: RPGpack_sheet_178
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 1024
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4576,8 +4597,8 @@ TextureImporter:
       name: RPGpack_sheet_179
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 1088
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4597,8 +4618,8 @@ TextureImporter:
       name: RPGpack_sheet_180
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
+        x: 1152
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4618,8 +4639,8 @@ TextureImporter:
       name: RPGpack_sheet_181
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 1216
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -4639,7 +4660,7 @@ TextureImporter:
       name: RPGpack_sheet_182
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 128
         width: 64
         height: 64
@@ -4660,7 +4681,7 @@ TextureImporter:
       name: RPGpack_sheet_183
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 128
         width: 64
         height: 64
@@ -4681,7 +4702,7 @@ TextureImporter:
       name: RPGpack_sheet_184
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 128
         width: 64
         height: 64
@@ -4702,7 +4723,7 @@ TextureImporter:
       name: RPGpack_sheet_185
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 128
         width: 64
         height: 64
@@ -4723,7 +4744,7 @@ TextureImporter:
       name: RPGpack_sheet_186
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 128
         width: 64
         height: 64
@@ -4744,7 +4765,7 @@ TextureImporter:
       name: RPGpack_sheet_187
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 128
         width: 64
         height: 64
@@ -4765,7 +4786,7 @@ TextureImporter:
       name: RPGpack_sheet_188
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 128
         width: 64
         height: 64
@@ -4786,7 +4807,7 @@ TextureImporter:
       name: RPGpack_sheet_189
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 128
         width: 64
         height: 64
@@ -4807,7 +4828,7 @@ TextureImporter:
       name: RPGpack_sheet_190
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 128
         width: 64
         height: 64
@@ -4828,7 +4849,7 @@ TextureImporter:
       name: RPGpack_sheet_191
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 128
         width: 64
         height: 64
@@ -4849,7 +4870,7 @@ TextureImporter:
       name: RPGpack_sheet_192
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 128
         width: 64
         height: 64
@@ -4870,7 +4891,7 @@ TextureImporter:
       name: RPGpack_sheet_193
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 704
         y: 128
         width: 64
         height: 64
@@ -4891,7 +4912,7 @@ TextureImporter:
       name: RPGpack_sheet_194
       rect:
         serializedVersion: 2
-        x: 1216
+        x: 768
         y: 128
         width: 64
         height: 64
@@ -4912,8 +4933,8 @@ TextureImporter:
       name: RPGpack_sheet_195
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 832
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -4933,8 +4954,8 @@ TextureImporter:
       name: RPGpack_sheet_196
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 896
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -4954,8 +4975,8 @@ TextureImporter:
       name: RPGpack_sheet_197
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 960
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -4975,8 +4996,8 @@ TextureImporter:
       name: RPGpack_sheet_198
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 1024
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -4996,8 +5017,8 @@ TextureImporter:
       name: RPGpack_sheet_199
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 1088
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5017,8 +5038,8 @@ TextureImporter:
       name: RPGpack_sheet_200
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
+        x: 1152
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5038,8 +5059,8 @@ TextureImporter:
       name: RPGpack_sheet_201
       rect:
         serializedVersion: 2
-        x: 384
-        y: 64
+        x: 1216
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5059,7 +5080,7 @@ TextureImporter:
       name: RPGpack_sheet_202
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 64
         width: 64
         height: 64
@@ -5080,7 +5101,7 @@ TextureImporter:
       name: RPGpack_sheet_203
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 64
         width: 64
         height: 64
@@ -5101,7 +5122,7 @@ TextureImporter:
       name: RPGpack_sheet_204
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 64
         width: 64
         height: 64
@@ -5122,7 +5143,7 @@ TextureImporter:
       name: RPGpack_sheet_205
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 64
         width: 64
         height: 64
@@ -5143,7 +5164,7 @@ TextureImporter:
       name: RPGpack_sheet_206
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 64
         width: 64
         height: 64
@@ -5164,7 +5185,7 @@ TextureImporter:
       name: RPGpack_sheet_207
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 64
         width: 64
         height: 64
@@ -5185,7 +5206,7 @@ TextureImporter:
       name: RPGpack_sheet_208
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 64
         width: 64
         height: 64
@@ -5206,7 +5227,7 @@ TextureImporter:
       name: RPGpack_sheet_209
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 64
         width: 64
         height: 64
@@ -5227,7 +5248,7 @@ TextureImporter:
       name: RPGpack_sheet_210
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 64
         width: 64
         height: 64
@@ -5248,7 +5269,7 @@ TextureImporter:
       name: RPGpack_sheet_211
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 64
         width: 64
         height: 64
@@ -5269,7 +5290,7 @@ TextureImporter:
       name: RPGpack_sheet_212
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 64
         width: 64
         height: 64
@@ -5290,7 +5311,7 @@ TextureImporter:
       name: RPGpack_sheet_213
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 704
         y: 64
         width: 64
         height: 64
@@ -5311,7 +5332,7 @@ TextureImporter:
       name: RPGpack_sheet_214
       rect:
         serializedVersion: 2
-        x: 1216
+        x: 768
         y: 64
         width: 64
         height: 64
@@ -5332,8 +5353,8 @@ TextureImporter:
       name: RPGpack_sheet_215
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 832
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5353,8 +5374,8 @@ TextureImporter:
       name: RPGpack_sheet_216
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
+        x: 896
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5374,8 +5395,8 @@ TextureImporter:
       name: RPGpack_sheet_217
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 960
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5395,8 +5416,8 @@ TextureImporter:
       name: RPGpack_sheet_218
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
+        x: 1024
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5416,8 +5437,8 @@ TextureImporter:
       name: RPGpack_sheet_219
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
+        x: 1088
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5437,8 +5458,8 @@ TextureImporter:
       name: RPGpack_sheet_220
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
+        x: 1152
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5458,8 +5479,8 @@ TextureImporter:
       name: RPGpack_sheet_221
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
+        x: 1216
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -5479,7 +5500,7 @@ TextureImporter:
       name: RPGpack_sheet_222
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 0
         width: 64
         height: 64
@@ -5500,7 +5521,7 @@ TextureImporter:
       name: RPGpack_sheet_223
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 0
         width: 64
         height: 64
@@ -5521,7 +5542,7 @@ TextureImporter:
       name: RPGpack_sheet_224
       rect:
         serializedVersion: 2
-        x: 960
+        x: 512
         y: 0
         width: 64
         height: 64
@@ -5542,7 +5563,7 @@ TextureImporter:
       name: RPGpack_sheet_225
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 0
         width: 64
         height: 64
@@ -5563,7 +5584,7 @@ TextureImporter:
       name: RPGpack_sheet_226
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 640
         y: 0
         width: 64
         height: 64
@@ -5584,7 +5605,7 @@ TextureImporter:
       name: RPGpack_sheet_227
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 704
         y: 0
         width: 64
         height: 64
@@ -5605,7 +5626,7 @@ TextureImporter:
       name: RPGpack_sheet_228
       rect:
         serializedVersion: 2
-        x: 1216
+        x: 768
         y: 0
         width: 64
         height: 64
@@ -5618,6 +5639,153 @@ TextureImporter:
       bones: []
       spriteID: cb6bc8d22b6bee820800000000000000
       internalID: 2949495682358884028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_229
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e5ec65fd6afd810800000000000000
+      internalID: 1792334654881029672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_230
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d734bfaf19633780800000000000000
+      internalID: -8704498069964310574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_231
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6354a620005b9e360800000000000000
+      internalID: 7199484490973594934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_232
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ee3607df9389570800000000000000
+      internalID: 8473586459572694618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_233
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5febab691058465d0800000000000000
+      internalID: -3070182804089553163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_234
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d82078ce8bbb940800000000000000
+      internalID: 5313043511430516050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPGpack_sheet_235
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb303d51dfa707bd0800000000000000
+      internalID: -2634470554600275009
       vertices: []
       indices: 
       edges: []
