@@ -89,8 +89,8 @@ public class Inventory {
                 player.healthSystem.Heal(25);
                 RemoveItem(item);
                 break;
-            case Item.ItemType.Food://To Implement
-                //player.hungerSystem.Heal(25);
+            case Item.ItemType.Food:
+                player.hungerSystem.Eat(25);
                 RemoveItem(item);
                 break;
             case Item.ItemType.Sword:

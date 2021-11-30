@@ -9,10 +9,10 @@ public class EnemyProjectile : MonoBehaviour {
 
     //Public variables
     public float speed;
-    public int damage;
+    public float damage;
     public float projectileLife;
 
-    
+
     void Start() { //Start is used to direct the arrow towards the player
         //Get position of the player for the projectile
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,7 +24,7 @@ public class EnemyProjectile : MonoBehaviour {
         this.GetComponent<Rigidbody2D>().rotation = angle;
     }
 
-    
+
     void FixedUpdate() { //Update to move the arrow and destroy the arrow on miss
         //Move towards the players last position
         transform.position = Vector2.MoveTowards(transform.position, lastPlayerPosition, speed * Time.deltaTime);
@@ -40,7 +40,7 @@ public class EnemyProjectile : MonoBehaviour {
         if (other.CompareTag("Player")) {
             var health = player.GetComponent<Player>().healthSystem;
             health.Damage(damage);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 
