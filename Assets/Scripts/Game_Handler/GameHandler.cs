@@ -33,9 +33,8 @@ public class GameHandler : MonoBehaviour {
     public Text timerText;
     public Text scoreText;
     private Renderer tempBackgroundColour;
-
     public string currentScene;
-    
+
     private void Start() {
         //Get player gameobject and Script
         player = GameObject.Find("Player");
@@ -62,8 +61,10 @@ public class GameHandler : MonoBehaviour {
         DayTimer();
     }
 
-    
- 
+    private void Update() {//Inputs
+        if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
+    }
+
     //Function to Spawn enemies between 3 to 6 seconds and up to 1 and 3 seconds
     private void EnemySpawnTimer() {
         float growth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/11.0f);// From 0 to 2/3 being the max
@@ -78,6 +79,7 @@ public class GameHandler : MonoBehaviour {
 
     //Function to keep update numberof days, 1 day = 30 seconds
     private void DayTimer() {
+        player.GetComponent<Player>().hungerSystem.Starve(0.01f);
         //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
         float dayLight = 0.5f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);

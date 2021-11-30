@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e187c3e67d367049bb9d4be0b215d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Player
   speed: 15
   damage: 10
   projectileLife: 0.3
