@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcf51c08a6f4f94e831b478d00f1dc9, type: 3}
+  m_Name: Stone
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  ID: 1
+  DisplayName: Stone
+  Description: A regular stone, used in crfating. Found on natural spawning rocks
+  Icon: {fileID: 21300000, guid: d51328185f4bbd64881949ec327e718e, type: 3}
+  MaxStackSize: 8
+  GoldValue: 0

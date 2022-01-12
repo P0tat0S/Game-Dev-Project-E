@@ -18,7 +18,7 @@ public class PerlinNoiseMap : MonoBehaviour {
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
     //Recommended value 4-20
-    float magnification = 14.0f;
+    float magnification = 16.0f;
 
     //Random "Seed" in each generation
     int x_offset;//Decrease moves left, Increase moves right
