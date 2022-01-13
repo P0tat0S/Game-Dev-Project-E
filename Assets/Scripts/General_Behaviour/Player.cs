@@ -36,6 +36,13 @@ public class Player : MonoBehaviour {
     private GameHandler gameHandler;
     public HungerSystem hungerSystem = new HungerSystem(50);
 
+    public Transform AttackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+
+    //Animator component
+    public Animator animator;
+
     // Start is called before the first frame update
     private void Start() {
         /**********************
@@ -76,10 +83,10 @@ public class Player : MonoBehaviour {
         List<Item> itemList = inventory.GetItemList();
 
         //Movement by WASD or Arrow keys
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) { moveY = +1f; DestroyTutorial(); }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) { moveX = -1f; DestroyTutorial(); }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) { moveY = -1f; DestroyTutorial(); }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) { moveX = +1f; DestroyTutorial(); }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) { moveY = +1f; DestroyTutorial(); animator.SetFloat("Speed", 1);}
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) { moveX = -1f; DestroyTutorial(); animator.SetFloat("Speed", 1);}
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) { moveY = -1f; DestroyTutorial(); animator.SetFloat("Speed", 1);}
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) { moveX = +1f; DestroyTutorial(); animator.SetFloat("Speed", 1);}
 
         movement = new Vector3(moveX, moveY).normalized;
 
