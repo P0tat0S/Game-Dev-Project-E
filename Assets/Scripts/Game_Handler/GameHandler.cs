@@ -19,6 +19,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject archer;
     public GameObject tree;
     public GameObject stone;
+    public bool enableEnemySpawn;
     private float enemySpawnTime;
     private float resourceSpawnTime;
     private int numberOfDays;
@@ -53,7 +54,7 @@ public class GameHandler : MonoBehaviour {
     }
 
     private void Update() {//Day system and enemy Spawn
-        if (Time.timeSinceLevelLoad >= enemySpawnTime) {
+        if (Time.timeSinceLevelLoad >= enemySpawnTime && enableEnemySpawn) {
             SpawnEnemy();
             EnemySpawnTimer();
         }
@@ -80,7 +81,7 @@ public class GameHandler : MonoBehaviour {
 
     //Function to keep update numberof days, 1 day = 30 seconds
     private void DayTimer() {
-        player.GetComponent<Player>().hungerSystem.Starve(0.01f);
+        player.GetComponent<Player>().hungerSystem.Starve(0.001f); //TO DO slower hunger lol
         //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
         float dayLight = 0.6f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
@@ -110,10 +111,6 @@ public class GameHandler : MonoBehaviour {
             Instantiate(stone, position, Quaternion.identity);
         }
     }
-
-
-
-    
 
     public void UpdateScore(int points) {
         score += points;

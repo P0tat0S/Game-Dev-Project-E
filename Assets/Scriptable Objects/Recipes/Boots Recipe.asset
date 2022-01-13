@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8584f4c13f205499adf2aac831f8b6, type: 3}
+  m_Name: Boots Recipe
+  m_EditorClassIdentifier: 
+  Materials:
+  - itemData: {fileID: 11400000, guid: 01a290ce2d0d5614980fd3948a481ec2, type: 2}
+    stackSize: 8
+  - itemData: {fileID: 11400000, guid: 063123722089b504aa5b9c04e9d8ebaa, type: 2}
+    stackSize: 4
+  - itemData: {fileID: 11400000, guid: eca0fd64687149949a7f18fdbf4cd48e, type: 2}
+    stackSize: 1
+  - itemData: {fileID: 11400000, guid: 33f94e151621f854fad416704ab5eca3, type: 2}
+    stackSize: 1
+  Results:
+  - itemData: {fileID: 11400000, guid: 20e15abf65e04b8408c17102f4c97aab, type: 2}
+    stackSize: 1

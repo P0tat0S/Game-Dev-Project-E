@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8584f4c13f205499adf2aac831f8b6, type: 3}
+  m_Name: CookedMeat Recipe
+  m_EditorClassIdentifier: 
+  Materials:
+  - itemData: {fileID: 11400000, guid: 6831783e7b1172540a8f45f4a55c73ea, type: 2}
+    stackSize: 1
+  - itemData: {fileID: 11400000, guid: 18bdd0a5a97315f439dd0480821f692c, type: 2}
+    stackSize: 2
+  - itemData: {fileID: 11400000, guid: 7e6a980c54eba174192f893d749d0326, type: 2}
+    stackSize: 2
+  Results:
+  - itemData: {fileID: 11400000, guid: 91cfb9e60ded3b5469d9327368ef427a, type: 2}
+    stackSize: 1

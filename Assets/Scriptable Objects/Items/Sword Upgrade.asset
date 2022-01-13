@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcf51c08a6f4f94e831b478d00f1dc9, type: 3}
+  m_Name: Sword Upgrade
+  m_EditorClassIdentifier: 
+  ID: 15
+  DisplayName: Sword Upgrade
+  Icon: {fileID: -4207090683842333115, guid: c08b065e44902b54fb7311598e35841b, type: 3}
+  MaxStackSize: 1
+  GoldValue: 20
