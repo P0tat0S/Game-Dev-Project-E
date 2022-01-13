@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2606093206365144007}
   - component: {fileID: 2606093206365144004}
   - component: {fileID: 2606093206365144005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2606093206365144006}
   newSprite: {fileID: 21300000, guid: c45fb39c6fc2f1646baada9604a761b7, type: 3}
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
+  pfHungerBar: {fileID: 0}
 --- !u!70 &2606093206365144005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
