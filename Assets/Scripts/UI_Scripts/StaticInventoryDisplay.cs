@@ -18,6 +18,7 @@ public class StaticInventoryDisplay : InventoryDisplay {
 
         AssignSlot(inventorySystem);
     }
+    
     public override void AssignSlot(InventorySystem invToDisplay) {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 

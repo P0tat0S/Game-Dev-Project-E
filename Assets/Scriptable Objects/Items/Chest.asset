@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bcf51c08a6f4f94e831b478d00f1dc9, type: 3}
-  m_Name: Wood
-  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
-  ID: 0
-  DisplayName: Wood
-  Description: A simple wood log, used for crafting. Can be found on trees.
-  Icon: {fileID: 21300000, guid: 1df6975c57f8c45418a2e02b6e6597f1, type: 3}
-  MaxStackSize: 8
-  GoldValue: 0
+  m_Name: Chest
+  m_EditorClassIdentifier: 
+  ID: 6
+  DisplayName: Chest
+  Icon: {fileID: -2449109871443933174, guid: 230f5f2141a33f849956383b8c9b74e4, type: 3}
+  MaxStackSize: 1
+  GoldValue: 10

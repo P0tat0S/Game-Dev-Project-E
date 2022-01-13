@@ -11,8 +11,11 @@ public class MouseItemData : MonoBehaviour {
     public Image ItemSprite;
     public TextMeshProUGUI ItemCount;
     public InventorySlot AssignedInventorySlot;
+    private GameObject player;
+    private GameObject droppedItem;
 
     private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
         ItemSprite.color = Color.clear;
         ItemCount.text = "";
     }
@@ -28,9 +31,10 @@ public class MouseItemData : MonoBehaviour {
         if (AssignedInventorySlot.ItemData != null) {
             transform.position = Mouse.current.position.ReadValue();
 
-            if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject()) {
-                //TODO: Drop items in the ground
-                
+            if (Mouse.current.leftButton.wasReleasedThisFrame && !IsPointerOverUIObject()) {
+                for (int i = 0; i < AssignedInventorySlot.StackSize; i++) {
+                    DropItem(AssignedInventorySlot);
+                }
                 ClearSlot();
             }
         }
@@ -41,6 +45,23 @@ public class MouseItemData : MonoBehaviour {
         ItemCount.text = "";
         ItemSprite.color = Color.clear;
         ItemSprite.sprite = null;
+    }
+
+    public void DropItem(InventorySlot invSlot) {
+        droppedItem = new GameObject(invSlot.ItemData.DisplayName);
+        droppedItem.transform.localScale = new Vector3(0.5f, 0.5f, 0.0f);
+        droppedItem.AddComponent<BoxCollider2D>();
+        droppedItem.AddComponent<SpriteRenderer>();
+        droppedItem.AddComponent<ItemPickUp>();
+
+        SpriteRenderer sr = droppedItem.GetComponent<SpriteRenderer>(); 
+        sr.sprite= invSlot.ItemData.Icon;
+
+        ItemPickUp ipu = droppedItem.GetComponent<ItemPickUp>();
+        ipu.ItemData = invSlot.ItemData;
+
+        Instantiate(droppedItem, player.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+        Destroy(droppedItem);
     }
 
     public static bool IsPointerOverUIObject() {//From StackOverflow, enable clickable part that is not the item on the mouse

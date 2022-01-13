@@ -62,12 +62,14 @@ public class Player : MonoBehaviour {
     /***********
         Inputs
     ***********/
-    void OnMove(InputValue value) { moveValue = value.Get<Vector2>(); DestroyTutorial();}
+    void OnMove(InputValue value) { 
+        moveValue = value.Get<Vector2>(); DestroyTutorial();
+            
+    }
     void OnDash() { if (Time.time > nextDash) dashPressed = true; }
     void OnAttack() { if (Time.time > nextDash && ableToAttack) attackPressed = true; }
-    void OnInteract() {}//TO DO For Chest Opening and Dialogue
     void OnReset() { gameHandler.Restart(); }
-    void OnHotbar() {}
+    void OnHotbar() {} //1-9
 
     // Update is called once per frame
     void Update() {
