@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,6 +842,30 @@ Transform:
   m_Father: {fileID: 1931293171}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209596985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2606093206365144026, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
+  m_PrefabInstance: {fileID: 1931293170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1209596986
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209596985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9daac46b2b2fd8f43b8709e64bd7f64d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1234517997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,11 +1466,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606093206365144001, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2606093206365144001, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606093206365144001, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2606093206365144001, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1488,6 +1516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2606093206365144004, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1209596986}
     - target: {fileID: 2606093206365144004, guid: 23ad18204538bf344abebfc753bc1c9f, type: 3}
       propertyPath: pfHungerBar
       value: 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class ArcherBehaviour : MonoBehaviour {
     //Movement variables
     private Transform player;
     private Rigidbody2D rb;
@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour {
     private float TimeBtwShots;
     public float StartTimeBtwShots;
     public GameObject Projectile;
+    public bool facingRight = true;
+   
 
 
     void Start() { //Start to initialise healthbar and movement
@@ -42,7 +44,15 @@ public class EnemyBehaviour : MonoBehaviour {
     void FixedUpdate() {
         //Movement towards player
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
+        //compares player position to enemy position and flips if player is facing a different direction
+        if (player.transform.position.x < gameObject.transform.position.x && facingRight)
+        {
+            Flip();
+        }
+        if (player.transform.position.x > gameObject.transform.position.x && !facingRight)
+        {
+            Flip();
+        }
         //Shooting/Attacking
         if (TimeBtwShots <= 0) {
             Instantiate(Projectile, transform);
@@ -58,5 +68,14 @@ public class EnemyBehaviour : MonoBehaviour {
             gameHandler.UpdateScore(scoreOnKill);
             gameHandler.dropItem(this.transform);
         }
+    }
+
+    public void Flip()
+    {
+        //flips the enemy by inversing its movement if it needs to face the other direction
+        facingRight = !facingRight;
+        Vector3 newScale = gameObject.transform.localScale;
+        newScale.x *= -1;
+        gameObject.transform.localScale = newScale;
     }
 }

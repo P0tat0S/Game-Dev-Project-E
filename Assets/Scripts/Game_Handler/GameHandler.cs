@@ -128,7 +128,7 @@ public class GameHandler : MonoBehaviour {
 
     public void dropItem(Transform position) {
         //chance to drop item
-        if(Random.value > 0.7) {        
+        if(Random.value > 0.6) {        
             Instantiate(item, position);
         }
     }

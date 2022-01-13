@@ -30,6 +30,13 @@ public class Player : MonoBehaviour {
     private GameHandler gameHandler;
     public HungerSystem hungerSystem = new HungerSystem(50);
 
+    public Transform AttackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+
+    //Animator component
+    public Animator animator;
+
     // Start is called before the first frame update
     private void Start() {
         /**********************
