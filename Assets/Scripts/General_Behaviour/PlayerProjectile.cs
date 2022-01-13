@@ -12,6 +12,8 @@ public class PlayerProjectile : MonoBehaviour {
     public float speed;
     public float damage;
     public float projectileLife;
+
+    
     
     private void Start() { //Start is used to direct the arrow towards the enemy
         //Get position of the enemy for the projectile
@@ -38,8 +40,15 @@ public class PlayerProjectile : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) { //Projectile interaccion on enemy collision
-        if (other.CompareTag("Enemy")) {
-            var health = other.GetComponent<EnemyBehaviour>().healthSystem;
+        if (other.CompareTag("Enemy") && other.GetComponent<KnightBehaviour>() != null) {
+            var health = other.GetComponent<KnightBehaviour>().healthSystem;
+            health.Damage(damage);
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Enemy") && other.GetComponent<ArcherBehaviour>() != null)
+        {
+            var health = other.GetComponent<ArcherBehaviour>().healthSystem;
             health.Damage(damage);
             Destroy(gameObject);
         }
