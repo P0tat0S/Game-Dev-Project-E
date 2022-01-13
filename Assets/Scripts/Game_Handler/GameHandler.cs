@@ -86,7 +86,7 @@ public class GameHandler : MonoBehaviour {
         float dayLight = 0.6f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
         timerText.text = "Day: " + numberOfDays.ToString();
-        float clampedDayLight = Mathf.Clamp(dayLight, 0.1f, 1.0f);
+        float clampedDayLight = Mathf.Clamp(dayLight, 0.5f, 1.0f);
         backgroundColor.sharedMaterial.color = new Color(clampedDayLight, clampedDayLight, clampedDayLight, 1);//dayTime system
     }
 

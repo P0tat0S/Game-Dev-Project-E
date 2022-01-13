@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 1
   DisplayName: Stone
   Icon: {fileID: -2647792621319512122, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 1
-  GoldValue: 8
+  MaxStackSize: 8
+  GoldValue: 0

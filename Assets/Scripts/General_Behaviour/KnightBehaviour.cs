@@ -34,7 +34,7 @@ public class KnightBehaviour : MonoBehaviour
         //Start Health System of the enemy with selected health
         healthSystem = new HealthSystem(health);
         //Create the healthbar position it and scale it
-        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 0.8f), Quaternion.identity, this.transform);
+        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(-0.3f, 0.6f, 0f), Quaternion.identity, this.transform);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 
@@ -47,14 +47,14 @@ public class KnightBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         //Movement towards player
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         //compares player position to enemy position and flips if player is facing a different direction
-        if (player.transform.position.x < gameObject.transform.position.x && !facingRight)
-        {
+        if (player.transform.position.x < gameObject.transform.position.x && !facingRight) {
             Flip();
         }
-        if (player.transform.position.x > gameObject.transform.position.x && facingRight){
+        if (player.transform.position.x > gameObject.transform.position.x && facingRight) {
             Flip();
         }
         //plays the move animation if the enemy is not attacking

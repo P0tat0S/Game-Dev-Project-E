@@ -20,8 +20,6 @@ public class Player : MonoBehaviour {
     private bool attackPressed;
     private float nextAttack;
     public GameObject Projectile;
-    public SpriteRenderer spriteRenderer;
-    public Sprite newSprite;
 
     //Player Stats
     public Transform pfHealthBar;
@@ -36,6 +34,7 @@ public class Player : MonoBehaviour {
 
     //Animator component
     public Animator animator;
+    public bool facingRight = true;
 
     // Start is called before the first frame update
     private void Start() {
@@ -71,10 +70,15 @@ public class Player : MonoBehaviour {
     ***********/
     void OnMove(InputValue value) { 
         moveValue = value.Get<Vector2>(); DestroyTutorial();
-            
+        animator.SetFloat("Speed", Mathf.Abs(moveValue.magnitude));
+        if(moveValue.x < 0 && facingRight) {
+            Flip();
+        } else if (moveValue.x > 0 && !facingRight) {
+            Flip();
+        }
     }
     void OnDash() { if (Time.time > nextDash) dashPressed = true; }
-    void OnAttack() { if (Time.time > nextDash && ableToAttack) attackPressed = true; }
+    void OnAttack() { if (Time.time > nextAttack) attackPressed = true; }
     void OnReset() { gameHandler.Restart(); }
     void OnHotbar() {} //1-9
 
@@ -96,7 +100,6 @@ public class Player : MonoBehaviour {
         }
 
         if(attackPressed) {//attack action
-            spriteRenderer.sprite = newSprite;
             Instantiate(Projectile, transform);
             nextAttack = Time.time + attackCooldown;
             hungerSystem.Starve(0.5f);
@@ -114,5 +117,14 @@ public class Player : MonoBehaviour {
     private void DestroyTutorial() {//Destroy tutorial on move
         GameObject tutorial = GameObject.Find("Tutorial");
         Destroy(tutorial);
+    }
+
+    public void Flip()
+    {
+        //flips the enemy by inversing if it needs to face the other direction
+        facingRight = !facingRight;
+        Vector3 newScale = gameObject.transform.localScale;
+        newScale.x *= -1;
+        gameObject.transform.localScale = newScale;
     }
 }

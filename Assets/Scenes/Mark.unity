@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &25644036
 Transform:
   m_ObjectHideFlags: 0
@@ -3039,7 +3039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestPanel: {fileID: 2088689818}
   playerInventoryPanel: {fileID: 1870539908}
-  craftingPanel: {fileID: 0}
+  craftingPanel: {fileID: 784496092}
 --- !u!1 &1251855948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   archer: {fileID: 2739487577064298539, guid: 92058b5e815b34d4782d9929dbd1c1a0, type: 3}
   tree: {fileID: 8490434896007765537, guid: 01bdc7d5b2d4a784a858218d3c897def, type: 3}
   stone: {fileID: 1789373972121591515, guid: c38aff1cb5591134182155411d8134eb, type: 3}
-  enableEnemySpawn: 0
+  enableEnemySpawn: 1
   item: {fileID: 2107081889427318488, guid: e71e13876a300654f81f358286ac8349, type: 3}
   timerText: {fileID: 1176927509}
   scoreText: {fileID: 559264412}
@@ -3960,7 +3960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1720927036
 Transform:
   m_ObjectHideFlags: 0

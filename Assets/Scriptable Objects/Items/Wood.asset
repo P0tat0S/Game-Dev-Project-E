@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 0
   DisplayName: Wood
   Icon: {fileID: 765229982983105973, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 1
-  GoldValue: 8
+  MaxStackSize: 8
+  GoldValue: 0

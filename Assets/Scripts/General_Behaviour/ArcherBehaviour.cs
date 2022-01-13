@@ -30,7 +30,7 @@ public class ArcherBehaviour : MonoBehaviour {
         //Start Health System of the enemy with selected health
         healthSystem = new HealthSystem(health);
         //Create the healthbar position it and scale it
-        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(0, 0.8f), Quaternion.identity, this.transform);
+        Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(-0.1f, 0.6f, 0f), Quaternion.identity, this.transform);
         HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
         healthBar.Setup(healthSystem);
 
@@ -42,6 +42,7 @@ public class ArcherBehaviour : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         //Movement towards player
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         //compares player position to enemy position and flips if player is facing a different direction
