@@ -131,7 +131,7 @@ public class GameHandler : MonoBehaviour {
                 Instantiate(stone, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn gold with 10% chance
-                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(140.0f, 50.0f), 0.0f);//Spawn Top Biome
                 Instantiate(gold, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn iron with 10% chance
@@ -143,8 +143,12 @@ public class GameHandler : MonoBehaviour {
                 Instantiate(coal, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
-                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, -50.0f), 0.0f);
                 Instantiate(meat, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.75f) {//spawn berry with 25% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-50.0f, 50.0f), 0.0f);//Spawn middle biome
+                Instantiate(berry, position, Quaternion.identity, Resources.transform);
             }
         }
         

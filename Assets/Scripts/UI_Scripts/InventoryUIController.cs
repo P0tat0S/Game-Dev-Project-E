@@ -26,16 +26,16 @@ public class InventoryUIController : MonoBehaviour {
     }
 
     void Update() {
-        if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.tabKey.wasPressedThisFrame)
             chestPanel.gameObject.SetActive(false);
-        if (playerInventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (playerInventoryPanel.gameObject.activeInHierarchy && Keyboard.current.tabKey.wasPressedThisFrame)
             playerInventoryPanel.gameObject.SetActive(false);
 
         if (Keyboard.current.cKey.wasPressedThisFrame) {
             Debug.Log("C was pressed");
             DisplayCrafting();
         }
-        if (craftingPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (craftingPanel.gameObject.activeInHierarchy && Keyboard.current.tabKey.wasPressedThisFrame)
             craftingPanel.gameObject.SetActive(false);
     }
 

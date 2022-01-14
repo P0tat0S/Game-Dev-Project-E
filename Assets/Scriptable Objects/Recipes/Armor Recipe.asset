@@ -16,7 +16,7 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: 063123722089b504aa5b9c04e9d8ebaa, type: 2}
     stackSize: 4
   - itemData: {fileID: 11400000, guid: 75a6ca23c03d39649bac4924f1222d3e, type: 2}
-    stackSize: 4
+    stackSize: 2
   Results:
   - itemData: {fileID: 11400000, guid: eca0fd64687149949a7f18fdbf4cd48e, type: 2}
     stackSize: 1
