@@ -21,17 +21,17 @@ Used for tiles in the map
 Various images/pngs from the internet for sprites were also used 
 ## Controls:
 
-Player Movement --> WASD / Arrow Keys
-Player Dash --> Space
-Restart Game --> R
-To open crafting panel --> C
-E - Interact(Recollect Resources, Open Chests)
-I - Open Player Inventory
-Q and Left Click - Attack
-Right Click - Use Item when Selected
-Left Click - Select Items
-Esc - Close Inventory, Crafting Panel and Chest
-Esc - Pause 
-C - Open Crafting Panel
+Player Movement --> WASD / Arrow Keys  
+Player Dash --> Space  
+Restart Game --> R  
+To open crafting panel --> C  
+E - Interact(Recollect Resources, Open Chests)  
+I - Open Player Inventory  
+Q and Left Click - Attack  
+Right Click - Use Item when Selected  
+Left Click - Select Items  
+Esc - Close Inventory, Crafting Panel and Chest  
+Esc - Pause  
+C - Open Crafting Panel  
 
 Link to the Game: https://p0tat0s.github.io/Game-Dev-Project-E/build/index.html
