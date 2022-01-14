@@ -17,6 +17,9 @@ public class GameHandler : MonoBehaviour {
     *******************/
     public GameObject knight;
     public GameObject archer;
+    /*******************
+        Resource Spawning
+    *******************/
     public bool enableEnemySpawn;
     private float enemySpawnTime;
     private float resourceSpawnTime;
@@ -30,7 +33,10 @@ public class GameHandler : MonoBehaviour {
     private GameObject Resources;
     public GameObject tree;
     public GameObject stone;
-    //Add more Items
+    public GameObject gold;
+    public GameObject iron;
+    public GameObject coal;
+    public GameObject meat;
     public GameObject berry;
 
     /**************
@@ -115,15 +121,25 @@ public class GameHandler : MonoBehaviour {
 
     private void SpawnResource() {
         //Vector for random position in the map
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
-            float chance = Random.Range(0.0f, 1.0f);
-            if ( chance < 0.33f) {//Spawn tree with 33% chance
-                Instantiate(tree, position, Quaternion.identity, Resources.transform);
-            } else if (chance < 0.66f) {//Spawn stone with 33% chance
+            if (Random.Range(0.0f, 1.0f) > 0.80f){//Spawn tree with 20% chance
+            Instantiate(tree, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.80f){//spawn stone with 20% chance
                 Instantiate(stone, position, Quaternion.identity, Resources.transform);
-            } else { //Spawn Berry with 33% chance 
-                Instantiate(berry, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn gold with 10% chance
+                Instantiate(gold, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn iron with 10% chance
+                Instantiate(iron, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn coal with 15% chance
+                Instantiate(coal, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
+                Instantiate(meat, position, Quaternion.identity, Resources.transform);
             }
         }
         
