@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7072527265098085116}
   - component: {fileID: 7686347072854438907}
-  - component: {fileID: 168940067192371853}
+  - component: {fileID: -2583569803325149353}
   m_Layer: 0
   m_Name: TILE_PoisonWater
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &168940067192371853
+--- !u!61 &-2583569803325149353
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

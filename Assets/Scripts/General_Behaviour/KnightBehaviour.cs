@@ -8,7 +8,8 @@ public class KnightBehaviour : MonoBehaviour
     private Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public float moveSpeed; 
+    public float moveSpeed;
+    private GameHandler gameHandler;
 
     //Enemy Stats
     public float health;
@@ -24,14 +25,20 @@ public class KnightBehaviour : MonoBehaviour
     public Animator animator;
     //used to check is sprite needs flipping
     public bool facingRight = true;
+    public GameObject Iron;
+    public GameObject Bone;
+    public GameObject Coin;
+    private bool itemDropped = false;
+    private GameObject Resources;
 
 
-    void Start()
-    { //Start to initialise healthbar and movement
+    void Start() { //Start to initialise healthbar and movement
+        gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
         /*******************
            Enemy Healthbar
         *******************/
         //Start Health System of the enemy with selected health
+        health *= (1 + gameHandler.EnemeyGrowth / 40f);
         healthSystem = new HealthSystem(health);
         //Create the healthbar position it and scale it
         Transform healthBarTransform = Instantiate(pfHealthBar, this.transform.position + new Vector3(-0.3f, 0.6f, 0f), Quaternion.identity, this.transform);
@@ -39,9 +46,9 @@ public class KnightBehaviour : MonoBehaviour
         healthBar.Setup(healthSystem);
 
         //Player targeting and rigid body init for Movement
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
-
+        //Just to tidy Object Hierarchy
+        Resources = GameObject.Find("Resources");
     }
 
     // Update is called once per frame
@@ -61,31 +68,44 @@ public class KnightBehaviour : MonoBehaviour
         animator.SetBool("Attack", false);
         //detects player in range of attack
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(AttackPoint.position, attackRange, playerLayers);
-        var health = player.GetComponent<Player>().healthSystem;
-        foreach(Collider2D player in hitPlayer)
-        {
+        var activePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var health = activePlayer.healthSystem;
+        foreach(Collider2D player in hitPlayer) {
             //plays the attack animation when in range to attack player
             animator.SetBool("Attack", true);
             //damages players health
-            health.Damage(damage);
+            health.Damage((damage*(1 + gameHandler.EnemeyGrowth / 40f)) * ((100f - activePlayer.Defense) / 100f));
         }
 
         //Check if dead
         if (healthSystem.GetHealth() <= 0) {
             animator.SetBool("IsDead", true);
             Destroy(gameObject, 0.6f);
-            var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
-            gameHandler.UpdateScore(scoreOnKill);
-            gameHandler.dropItem(this.transform);
+            gameHandler.UpdateScore((int)(1 + gameHandler.EnemeyGrowth / 40f) *scoreOnKill);
+            //Drop Item from Item List
+            DropItem();
         }
     }
 
-    public void Flip()
-    {
+    public void Flip() {
         //flips the enemy by inversing if it needs to face the other direction
         facingRight = !facingRight;
         Vector3 newScale = gameObject.transform.localScale;
         newScale.x *= -1;
         gameObject.transform.localScale = newScale;
+    }
+
+    public void DropItem() {
+        if(!itemDropped) {
+            itemDropped = true;
+            float chance = Random.Range(0.0f, 1.0f);
+            if (chance < 0.6f) {//Spawn Bone with 60% chance
+                Instantiate(Bone, transform.position, Quaternion.identity, Resources.transform);
+            } else if (chance < 0.9f) {//Spawn Coin with 30% chance
+                Instantiate(Coin, transform.position, Quaternion.identity, Resources.transform);
+            } else { //Spawn Iron with 10% chance 
+                Instantiate(Iron, transform.position, Quaternion.identity, Resources.transform);
+            }
+        }
     }
 }

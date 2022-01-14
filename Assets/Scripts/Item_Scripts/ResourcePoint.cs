@@ -16,4 +16,8 @@ public class ResourcePoint : MonoBehaviour, IInteractable {
     public void EndInteraction() {
 
     }
+
+    private void OnCollisionEnter(Collision other) {
+        Destroy(this);
+    }
 }
