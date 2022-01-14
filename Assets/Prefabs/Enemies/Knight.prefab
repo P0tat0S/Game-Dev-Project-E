@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3181531726193655899}
   - component: {fileID: -8026444808383281487}
   - component: {fileID: 7720112008995472004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Knight
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5183058022376542170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
