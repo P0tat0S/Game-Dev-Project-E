@@ -17,8 +17,15 @@ public class GameHandler : MonoBehaviour {
     *******************/
     public GameObject knight;
     public GameObject archer;
+    /*******************
+        Resource Spawning
+    *******************/
     public GameObject tree;
     public GameObject stone;
+    public GameObject gold;
+    public GameObject iron;
+    public GameObject coal;
+    public GameObject meat;
     public bool enableEnemySpawn;
     private float enemySpawnTime;
     private float resourceSpawnTime;
@@ -104,11 +111,23 @@ public class GameHandler : MonoBehaviour {
     {
         //Vector for random position in the map
         Vector3 position = new Vector3(Random.Range(-19.0f, 19.0f), Random.Range(-11.0f, 11.0f), 0.0f);
-        if (Random.Range(0.0f, 1.0f) > 0.33f){//Spawn tree with 66% chance
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//Spawn tree with 15% chance
             Instantiate(tree, position, Quaternion.identity);
         }
-        else{//Spawn stone with 33% chance
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn stone with 15% chance
             Instantiate(stone, position, Quaternion.identity);
+        }
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn gold with 15% chance
+            Instantiate(gold, position, Quaternion.identity);
+        }
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn iron with 15% chance
+            Instantiate(iron, position, Quaternion.identity);
+        }
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn coal with 15% chance
+            Instantiate(coal, position, Quaternion.identity);
+        }
+        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
+            Instantiate(meat, position, Quaternion.identity);
         }
     }
 
