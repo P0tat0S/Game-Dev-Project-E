@@ -121,24 +121,29 @@ public class GameHandler : MonoBehaviour {
 
     private void SpawnResource() {
         //Vector for random position in the map
-        for (int i = 0; i < 5; i++) {
-            Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
+        for (int i = 0; i < 10; i++) {
             if (Random.Range(0.0f, 1.0f) > 0.80f){//Spawn tree with 20% chance
-            Instantiate(tree, position, Quaternion.identity, Resources.transform);
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
+                Instantiate(tree, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.80f){//spawn stone with 20% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
                 Instantiate(stone, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn gold with 10% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
                 Instantiate(gold, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn iron with 10% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
                 Instantiate(iron, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn coal with 15% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
                 Instantiate(coal, position, Quaternion.identity, Resources.transform);
             }
             if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
+                Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
                 Instantiate(meat, position, Quaternion.identity, Resources.transform);
             }
         }

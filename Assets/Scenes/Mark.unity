@@ -5414,6 +5414,10 @@ MonoBehaviour:
   enableEnemySpawn: 1
   tree: {fileID: 8490434896007765537, guid: 01bdc7d5b2d4a784a858218d3c897def, type: 3}
   stone: {fileID: 1789373972121591515, guid: c38aff1cb5591134182155411d8134eb, type: 3}
+  gold: {fileID: 8139269010492957210, guid: bd45d41e1f6cf4b438573938c0a26a85, type: 3}
+  iron: {fileID: 3214382042813476886, guid: a7a219fd95ee5324cbf645b6a2f68ddc, type: 3}
+  coal: {fileID: 9182971016669261394, guid: 773b7de265bc8f643b6119078fcffd5f, type: 3}
+  meat: {fileID: 669684146077184975, guid: 09ae519b021c8924ebebe1a2768a973e, type: 3}
   berry: {fileID: 3795586636113365663, guid: 688399eaae90ef94f82e11549ace28ee, type: 3}
   timerText: {fileID: 1176927509}
   scoreText: {fileID: 559264412}

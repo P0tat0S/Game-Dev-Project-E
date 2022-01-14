@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5563114433996490107}
   - component: {fileID: 1003770737569888890}
   - component: {fileID: 5213586486459976345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goldmine
   m_TagString: ResourcePoint
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8139269010492957210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6128647138564577166}
   - component: {fileID: 3184012747298522410}
   - component: {fileID: 2245568793027982960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Animalsource
   m_TagString: ResourcePoint
   m_Icon: {fileID: 0}
