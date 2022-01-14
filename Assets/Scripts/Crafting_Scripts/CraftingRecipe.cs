@@ -8,16 +8,20 @@ public class CraftingRecipe : ScriptableObject {
     public List<InventorySlot> Materials;
     public List<InventorySlot> Results;
 
-    private bool AbleToCraft(PlayerInventoryHolder playerInventory) {
+    public bool AbleToCraft(PlayerInventoryHolder playerInventory) {
         foreach (InventorySlot craftingItems in Materials) {
-            if (playerInventory.ItemAmount(craftingItems.ItemData, craftingItems.StackSize)) 
-            return false;
+            if (playerInventory.ItemAmount(craftingItems.ItemData, craftingItems.StackSize)) {
+                //Debug.Log("Crafting not passed");
+                return false;
+            }
         }
+        //Debug.Log("Crafting passed");
         return true;
     }
 
     public void Craft(PlayerInventoryHolder playerInventory) {
         if (AbleToCraft(playerInventory)) {
+            //Debug.Log("Crafting in progress");
             foreach (InventorySlot craftingItems in Materials) {
                 playerInventory.RemoveItem(craftingItems.ItemData, craftingItems.StackSize);
             }

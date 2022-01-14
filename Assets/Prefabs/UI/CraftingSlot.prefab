@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7416523082989300960}
   - component: {fileID: 9181875403805662135}
   - component: {fileID: 4004934149714866333}
-  - component: {fileID: 3389866736122988042}
   m_Layer: 5
   m_Name: CraftingSlot
   m_TagString: Untagged
@@ -39,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7416523082989300960
 MonoBehaviour:
@@ -123,23 +122,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3389866736122988042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269227687145898853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ed8897631b547499d8562b35ee70b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: {fileID: 6041468277791053783}
-  itemCount: {fileID: 2336866667360782622}
-  assignedInventorySlot:
-    itemData: {fileID: 0}
-    stackSize: -1
 --- !u!1 &3134219787290959663
 GameObject:
   m_ObjectHideFlags: 0

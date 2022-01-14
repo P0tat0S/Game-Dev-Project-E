@@ -12,7 +12,7 @@ public class InventoryUIController : MonoBehaviour {
     private void Awake() {
         chestPanel.gameObject.SetActive(false);
         playerInventoryPanel.gameObject.SetActive(false);
-        craftingPanel.gameObject.SetActive(true);
+        craftingPanel.gameObject.SetActive(false);
     }
 
     private void OnEnable() {
@@ -30,6 +30,11 @@ public class InventoryUIController : MonoBehaviour {
             chestPanel.gameObject.SetActive(false);
         if (playerInventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
             playerInventoryPanel.gameObject.SetActive(false);
+
+        if (Keyboard.current.cKey.wasPressedThisFrame) {
+            Debug.Log("C was pressed");
+            DisplayCrafting();
+        }
         if (craftingPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
             craftingPanel.gameObject.SetActive(false);
     }
@@ -44,7 +49,7 @@ public class InventoryUIController : MonoBehaviour {
         playerInventoryPanel.RefreshDynamicInventory(invToDisplay);
     }
 
-    void DisplayCrafting(InventorySystem invToDisplay) {
+    public void DisplayCrafting() {
         craftingPanel.gameObject.SetActive(true);
     }
 

@@ -31,10 +31,17 @@ public class MouseItemData : MonoBehaviour {
         if (AssignedInventorySlot.ItemData != null) {
             transform.position = Mouse.current.position.ReadValue();
 
+            //Drop Item --> Left Click
             if (Mouse.current.leftButton.wasReleasedThisFrame && !IsPointerOverUIObject()) {
                 for (int i = 0; i < AssignedInventorySlot.StackSize; i++) {
                     DropItem(AssignedInventorySlot);
                 }
+                ClearSlot();
+            }
+
+            //Use Item --> Right Click
+            if (Mouse.current.rightButton.wasPressedThisFrame) {
+                AssignedInventorySlot.ItemData.UseItem();
                 ClearSlot();
             }
         }
@@ -48,6 +55,7 @@ public class MouseItemData : MonoBehaviour {
     }
 
     public void DropItem(InventorySlot invSlot) {
+        //Create Object
         droppedItem = new GameObject(invSlot.ItemData.DisplayName);
         droppedItem.transform.localScale = new Vector3(0.5f, 0.5f, 0.0f);
         droppedItem.AddComponent<BoxCollider2D>();
@@ -60,8 +68,9 @@ public class MouseItemData : MonoBehaviour {
         ItemPickUp ipu = droppedItem.GetComponent<ItemPickUp>();
         ipu.ItemData = invSlot.ItemData;
 
+        //Drop Object
         Instantiate(droppedItem, player.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
-        Destroy(droppedItem);
+        Destroy(droppedItem);//Fix for the bug double drop
     }
 
     public static bool IsPointerOverUIObject() {//From StackOverflow, enable clickable part that is not the item on the mouse

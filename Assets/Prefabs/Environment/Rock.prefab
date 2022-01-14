@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4356662548036552903}
   - component: {fileID: 901354714097370075}
-  - component: {fileID: 5187347446660401335}
-  - component: {fileID: -5209732497804224392}
-  m_Layer: 0
+  - component: {fileID: 2333893430934489274}
+  - component: {fileID: 5931515253223780454}
+  m_Layer: 6
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: ResourcePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,28 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5187347446660401335
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789373972121591515}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-5209732497804224392
+--- !u!114 &2333893430934489274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,8 +94,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1789373972121591515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acdb5dbe7a022f47af936b866af4df8, type: 3}
+  m_Script: {fileID: 11500000, guid: 74adfa446bf23f54ba16fe88abab4375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResourceLife: 3
   DroppedItem: {fileID: 7231635201236548866, guid: 64fb23978810ef9458307b9a0c985c5a, type: 3}
+--- !u!136 &5931515253223780454
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789373972121591515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

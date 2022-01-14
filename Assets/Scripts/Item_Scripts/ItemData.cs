@@ -15,4 +15,42 @@ public class ItemData : ScriptableObject {
     public Sprite Icon;
     public int MaxStackSize;
     public int GoldValue;
+    private Player player;
+
+    //Function to Use Items
+    public void UseItem() {
+        player =  GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        switch (DisplayName) {
+            case "Armor Upgrade":
+                player.AddArmor(1f);
+                break;
+            case "Armor":
+                player.EquipArmor();
+                break;
+            case "Campfire":
+            case "Chest":
+                player.PlaceObject(DisplayName);
+                break;
+            case "Cooked Meat":
+                player.hungerSystem.Eat(100f);
+                break;
+            case "Grapes":
+                player.hungerSystem.Eat(10f);
+                break;
+            case "Meat":
+                player.hungerSystem.Eat(25f);
+                break;
+            case "Potion":
+                player.healthSystem.Heal(25f);
+                break;
+            case "Sword Upgrade":
+                player.AddDamage(1f);
+                break;
+            case "Sword":
+                player.EquipSword();
+                break;
+            default:
+                return;
+        }
+    }
 }

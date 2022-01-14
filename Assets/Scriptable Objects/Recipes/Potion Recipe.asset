@@ -19,4 +19,4 @@ MonoBehaviour:
     stackSize: 2
   Results:
   - itemData: {fileID: 11400000, guid: f7440340be1e4ba4cb9fe861937bd745, type: 2}
-    stackSize: 2
+    stackSize: 1

@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MeeleAttack",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "8c144d19-6075-42d6-8601-1d551a9485c5",
                     "expectedControlType": "Button",
@@ -205,7 +205,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MeeleAttack",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab27b774-3bad-4a87-8bb2-afa527d68462",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
