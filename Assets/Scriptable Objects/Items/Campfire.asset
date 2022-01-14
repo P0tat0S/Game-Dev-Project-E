@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 17
   DisplayName: Campfire
   Icon: {fileID: 6600078782993143599, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 2
+  MaxStackSize: 1
   GoldValue: 10

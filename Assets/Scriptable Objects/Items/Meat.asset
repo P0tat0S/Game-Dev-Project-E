@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 12
   DisplayName: Meat
   Icon: {fileID: 4083576950374133590, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 8
+  MaxStackSize: 1
   GoldValue: 2

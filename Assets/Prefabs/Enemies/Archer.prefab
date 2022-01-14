@@ -127,6 +127,7 @@ MonoBehaviour:
   StartTimeBtwShots: 1
   Projectile: {fileID: 6051777856695151712, guid: a66d4217aaf4a0e469997a2d9864a814, type: 3}
   facingRight: 1
+  animator: {fileID: 8201026191463814582}
 --- !u!61 &9180933763561039536
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -60,6 +60,7 @@ public class InventorySlot {
 
     public void RemoveFromStack(int amount) {
         stackSize -= amount;
+        if (stackSize <= 0) ClearSlot();
         var UISlot = GameObject.Find("PlayerInventory").GetComponent<DynamicInventoryDisplay>();
         UISlot.RefreshDynamicInventory(UISlot.InventorySystem);
     }

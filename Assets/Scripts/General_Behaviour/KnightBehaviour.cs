@@ -71,10 +71,9 @@ public class KnightBehaviour : MonoBehaviour
         }
 
         //Check if dead
-        if (healthSystem.GetHealth() <= 0)
-        {
+        if (healthSystem.GetHealth() <= 0) {
             animator.SetBool("IsDead", true);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.6f);
             var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
             gameHandler.UpdateScore(scoreOnKill);
             gameHandler.dropItem(this.transform);

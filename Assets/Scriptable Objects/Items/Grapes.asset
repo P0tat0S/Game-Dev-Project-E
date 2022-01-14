@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 4
   DisplayName: Grapes
   Icon: {fileID: -5265110077617494344, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 16
+  MaxStackSize: 1
   GoldValue: 1

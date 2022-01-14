@@ -20,6 +20,7 @@ public class ArcherBehaviour : MonoBehaviour {
     public float StartTimeBtwShots;
     public GameObject Projectile;
     public bool facingRight = true;
+    public Animator animator;
    
 
 
@@ -64,7 +65,8 @@ public class ArcherBehaviour : MonoBehaviour {
 
         //Check if dead
         if (healthSystem.GetHealth() <= 0) {
-            Destroy(gameObject);
+            animator.SetBool("IsDead", true);
+            Destroy(gameObject, 0.6f);
             var gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
             gameHandler.UpdateScore(scoreOnKill);
             gameHandler.dropItem(this.transform);

@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 13
   DisplayName: Potion
   Icon: {fileID: -125282838621743759, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 8
+  MaxStackSize: 1
   GoldValue: 12

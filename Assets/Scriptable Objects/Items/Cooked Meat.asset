@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 9
   DisplayName: Cooked Meat
   Icon: {fileID: -3882436158539510781, guid: c08b065e44902b54fb7311598e35841b, type: 3}
-  MaxStackSize: 8
+  MaxStackSize: 1
   GoldValue: 4

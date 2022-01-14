@@ -15,7 +15,6 @@ public class Player : MonoBehaviour {
     private float nextDash;
 
     //Player Combat
-    public bool ableToAttack = true;
     public bool died = false;
     public float attackCooldown;
     private bool attackPressed;
@@ -137,15 +136,14 @@ public class Player : MonoBehaviour {
                     health.Damage(damage);
                 }
 
-
-                attackPressed = false;
             }
+            attackPressed = false;
         }
 
         //Check if dead
         if ((healthSystem.GetHealth() == 0 || hungerSystem.GetHunger() == 0) && !died){
             animator.SetTrigger("Dead");
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0.8f);
             died = true;
         }
     }
