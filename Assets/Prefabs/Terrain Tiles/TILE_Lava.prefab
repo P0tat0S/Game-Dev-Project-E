@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7161978008733016417}
   - component: {fileID: 3077145127016507392}
-  - component: {fileID: -6858802082133463747}
+  - component: {fileID: 3892303092070165259}
   m_Layer: 0
   m_Name: TILE_Lava
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-6858802082133463747
+--- !u!61 &3892303092070165259
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

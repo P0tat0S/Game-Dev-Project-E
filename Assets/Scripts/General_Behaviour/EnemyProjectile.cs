@@ -11,6 +11,7 @@ public class EnemyProjectile : MonoBehaviour {
     public float speed;
     public float damage;
     public float projectileLife;
+    private GameHandler gameHandler;
 
 
     void Start() { //Start is used to direct the arrow towards the player
@@ -22,6 +23,7 @@ public class EnemyProjectile : MonoBehaviour {
         Vector3 direction = player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         this.GetComponent<Rigidbody2D>().rotation = angle;
+        gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
     }
 
 
@@ -37,9 +39,10 @@ public class EnemyProjectile : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) { //Projectile interaccion on player collision
+        var activePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var health = activePlayer.healthSystem;
         if (other.CompareTag("Player")) {
-            var health = player.GetComponent<Player>().healthSystem;
-            health.Damage(damage);
+            health.Damage((damage * (1 + gameHandler.EnemeyGrowth / 40f)) * (100f - activePlayer.Defense) / 100f);
             Destroy(gameObject);
         }
     }

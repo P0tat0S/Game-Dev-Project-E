@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 94605968629755793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9864e387a11ad44adf403912886e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  damage: 15
-  projectileLife: 0.3
+  speed: 10
+  damage: 10
+  projectileLife: 0.4
 --- !u!50 &518432073630832635
 Rigidbody2D:
   serializedVersion: 4

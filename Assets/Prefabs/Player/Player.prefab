@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 7
   m_Name: InteractionPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -216,20 +216,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22e7f906ceb0c742807caf0af74165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveValue: {x: 0, y: 0}
-  dashCooldown: 1
-  ableToAttack: 1
-  attackCooldown: 0.5
+  attackCooldown: 0.3
   Projectile: {fileID: 94605968629755793, guid: a491fb95c8b01da4c9f58b2fae4a9306, type: 3}
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
   pfHungerBar: {fileID: 2818961162438280431, guid: f0731172e3ea8444f99332a912f098e2, type: 3}
-  PlayerAttack: {fileID: 0}
-  attackRange: 0.5
+  damage: 5
+  PlayerAttack: {fileID: 4383507743560405604}
+  attackRange: 0.75
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   animator: {fileID: 1951910873}
   facingRight: 1
+  chest: {fileID: 5458996386716427216, guid: f8c18d57d93eeaa47a29bbd1ddab5d01, type: 3}
+  campfire: {fileID: 7979722693855334500, guid: 75ed0019aa05a9045ae9d280c8e0444b, type: 3}
 --- !u!70 &2606093206365144005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

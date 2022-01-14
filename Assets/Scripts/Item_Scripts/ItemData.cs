@@ -22,7 +22,7 @@ public class ItemData : ScriptableObject {
         player =  GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         switch (DisplayName) {
             case "Armor Upgrade":
-                player.AddArmor(1f);
+                player.AddArmor(5f);
                 break;
             case "Armor":
                 player.EquipArmor();
@@ -44,7 +44,7 @@ public class ItemData : ScriptableObject {
                 player.healthSystem.Heal(25f);
                 break;
             case "Sword Upgrade":
-                player.AddDamage(1f);
+                player.AddDamage(10f);
                 break;
             case "Sword":
                 player.EquipSword();

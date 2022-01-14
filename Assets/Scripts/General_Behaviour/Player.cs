@@ -7,22 +7,19 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour {
 
     //Movement Variables
-    public Vector2 moveValue;
+    private Vector2 moveValue;
     private const float moveSpeed = 5f;
     private Rigidbody2D rb;
     private bool dashPressed;
-    public float dashCooldown;
+    private float dashCooldown = 1f;
     private float nextDash;
 
     //Player Combat
-    public bool died = false;
+    private bool died = false;
     public float attackCooldown;
     private bool attackPressed;
     private float nextAttack;
     public GameObject Projectile;
-    private float defense = 0f;
-    private bool armorEquiped = false;
-    public float Defense => defense;
 
     //Player Stats
     public Transform pfHealthBar;
@@ -30,11 +27,19 @@ public class Player : MonoBehaviour {
     public HealthSystem healthSystem = new HealthSystem(100);
     private GameHandler gameHandler;
     public HungerSystem hungerSystem = new HungerSystem(50);
-    public float damage = 10f;
 
+    //Weapon and Damage stats
+    public float damage = 5f;
+    private bool weaponEquiped = false;
+    private bool weaponUpgraded = false;
     public Transform PlayerAttack;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+
+    //Armor and Defense stats
+    private float defense = 0f;
+    private bool armorEquiped = false;
+    public float Defense => defense;
 
     //Animator component
     public Animator animator;
@@ -43,7 +48,8 @@ public class Player : MonoBehaviour {
     //Placeable Objects (Not really scalable)
     public GameObject chest;
     public GameObject campfire;
-    //Private variables
+
+    //Private Enemy variables
     private GameObject enemy;
     private GameObject[] enemies;
     private Vector2 lastEnemyPosition;
@@ -92,7 +98,7 @@ public class Player : MonoBehaviour {
     void OnDash() { if (Time.time > nextDash) dashPressed = true; }
     void OnAttack() { if (Time.time > nextAttack) attackPressed = true; }
     void OnReset() { gameHandler.Restart(); }
-    void OnHotbar() {} //1-9
+    void OnHotbar() {} //TODO Implement Item Usage from Hotbar
 
     // Update is called once per frame
     void Update() {
@@ -121,22 +127,18 @@ public class Player : MonoBehaviour {
             foreach(Collider2D enemy in hitEnemy) {
                 if (enemy.CompareTag("Enemy") && enemy.GetComponent<KnightBehaviour>() != null) {
                     var health = enemy.GetComponent<KnightBehaviour>().healthSystem;
-
-
                     animator.SetTrigger("LightAttack");
                     health.Damage(damage);
                 }
 
-                if (enemy.CompareTag("Enemy") && enemy.GetComponent<ArcherBehaviour>() != null)
-                {
+                if (enemy.CompareTag("Enemy") && enemy.GetComponent<ArcherBehaviour>() != null) {
                     var health = enemy.GetComponent<ArcherBehaviour>().healthSystem;
-
-
                     animator.SetTrigger("LightAttack");
                     health.Damage(damage);
                 }
 
             }
+            if(weaponUpgraded) Instantiate(Projectile, transform);
             attackPressed = false;
         }
 
@@ -162,6 +164,7 @@ public class Player : MonoBehaviour {
         gameObject.transform.localScale = newScale;
     }
 
+    //Armor is Percentage Damage Reduction
     public void EquipArmor() {
         //Can only be equipped once
         if(!armorEquiped) {
@@ -175,15 +178,27 @@ public class Player : MonoBehaviour {
     }
     
     public void EquipSword() {
-        //Equip Weapon to Attack with more damage
+        //Can only be equipped once
+        if (!weaponEquiped) {
+            weaponEquiped = true;
+            damage += 10f;
+        }
     }
-    public void AddDamage(float attack) {
+    public void AddDamage(float attackToAdd) {
         //Just Add Damage to Sword
+        weaponUpgraded = true;
+        damage += attackToAdd;
     }
 
     public void PlaceObject(string objectToPlace) {
-      
+        //TODO Implement placing of objects
+        if(objectToPlace == "Chest") {
+            Instantiate(chest, transform.position + new Vector3(0f, -1f, 0f), Quaternion.identity);
+        } else {
+            Instantiate(campfire, transform.position + new Vector3(0f, -1f, 0f), Quaternion.identity);
+        }
     }
+
     //Function that returns the closest enemy from a enemy array
     private GameObject ClosestEnemy(GameObject[] enemies) {
         var closestEnemy = enemies[0];

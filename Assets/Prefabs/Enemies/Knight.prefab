@@ -178,6 +178,9 @@ MonoBehaviour:
     m_Bits: 128
   animator: {fileID: -8026444808383281487}
   facingRight: 0
+  Iron: {fileID: 5691791182299832624, guid: 4c69919752a76ee49a45226ceedb4cf8, type: 3}
+  Bone: {fileID: 4477727407601222498, guid: 977359f76c3a9674c8ed070bf85b2a6b, type: 3}
+  Coin: {fileID: 7607429662335569065, guid: feca73e240c3e95459ea7e19b07e82dd, type: 3}
 --- !u!1 &9040057114533936729
 GameObject:
   m_ObjectHideFlags: 0
