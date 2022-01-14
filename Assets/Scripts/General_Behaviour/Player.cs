@@ -145,6 +145,8 @@ public class Player : MonoBehaviour {
             animator.SetTrigger("Dead");
             Destroy(gameObject, 0.8f);
             died = true;
+            var endMenu = GameObject.Find("End").GetComponent<EndMenu>();
+            endMenu.IsDead();
         }
     }
 
@@ -173,7 +175,7 @@ public class Player : MonoBehaviour {
         //Just Add Armor
         defense += defenseToAdd;
     }
-    
+
     public void EquipSword() {
         //Equip Weapon to Attack with more damage
     }
@@ -182,7 +184,7 @@ public class Player : MonoBehaviour {
     }
 
     public void PlaceObject(string objectToPlace) {
-      
+
     }
     //Function that returns the closest enemy from a enemy array
     private GameObject ClosestEnemy(GameObject[] enemies) {
