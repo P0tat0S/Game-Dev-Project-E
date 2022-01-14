@@ -147,6 +147,8 @@ public class Player : MonoBehaviour {
             animator.SetTrigger("Dead");
             Destroy(gameObject, 0.8f);
             died = true;
+            var endMenu = GameObject.Find("End").GetComponent<EndMenu>();
+            endMenu.IsDead();
         }
     }
 
@@ -176,7 +178,7 @@ public class Player : MonoBehaviour {
         //Just Add Armor
         defense += defenseToAdd;
     }
-    
+
     public void EquipSword() {
         //Can only be equipped once
         if (!weaponEquiped) {
@@ -191,12 +193,14 @@ public class Player : MonoBehaviour {
     }
 
     public void PlaceObject(string objectToPlace) {
+
         //TODO Implement placing of objects
         if(objectToPlace == "Chest") {
             Instantiate(chest, transform.position + new Vector3(0f, -1f, 0f), Quaternion.identity);
         } else {
             Instantiate(campfire, transform.position + new Vector3(0f, -1f, 0f), Quaternion.identity);
         }
+
     }
 
     //Function that returns the closest enemy from a enemy array
