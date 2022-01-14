@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5205385354619021230}
   - component: {fileID: 2222044077768596945}
-  - component: {fileID: -498543274417932223}
+  - component: {fileID: -3969265366138216027}
   m_Layer: 0
   m_Name: TILE_Water
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-498543274417932223
+--- !u!61 &-3969265366138216027
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

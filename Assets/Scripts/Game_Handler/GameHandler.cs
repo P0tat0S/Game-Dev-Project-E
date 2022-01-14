@@ -20,18 +20,24 @@ public class GameHandler : MonoBehaviour {
     /*******************
         Resource Spawning
     *******************/
+    public bool enableEnemySpawn;
+    private float enemySpawnTime;
+    private float resourceSpawnTime;
+    private int numberOfDays;
+    private float enemyGrowth;
+    public float EnemeyGrowth => enemyGrowth;
+
+    /***********************
+        Resource Spawning
+    ***********************/
+    private GameObject Resources;
     public GameObject tree;
     public GameObject stone;
     public GameObject gold;
     public GameObject iron;
     public GameObject coal;
     public GameObject meat;
-    public bool enableEnemySpawn;
-    private float enemySpawnTime;
-    private float resourceSpawnTime;
-    private int numberOfDays;
-    //Enemy drop
-    public GameObject item;
+    public GameObject berry;
 
     /**************
         Counters
@@ -56,18 +62,23 @@ public class GameHandler : MonoBehaviour {
         //Get renderer of a tile prefabs
         backgroundColor = tile_water;
 
+        //Just to tidy Object Hierarchy
+        Resources = GameObject.Find("Resources");
+
+        enemyGrowth = 0f;
         EnemySpawnTimer();//Start Spawning enemies
         UpdateScore(0);
     }
 
     private void Update() {//Day system and enemy Spawn
         if (Time.timeSinceLevelLoad >= enemySpawnTime && enableEnemySpawn) {
-            SpawnEnemy();
+            var enemiesSpawned = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemiesSpawned.Length < 100) SpawnEnemy();//Max 100 enemies
             EnemySpawnTimer();
         }
-        if (Time.timeSinceLevelLoad >= resourceSpawnTime)
-        {
-            SpawnResource();
+        if (Time.timeSinceLevelLoad >= resourceSpawnTime) {
+            var resourcesSpawned = GameObject.FindGameObjectsWithTag("ResourcePoint");
+            if (resourcesSpawned.Length < 100) SpawnResource();//Max 100 resource points
             ResourceSpawnTimer();
         }
         if (Input.GetKeyDown(KeyCode.R)) Restart();//R to restart
@@ -76,8 +87,8 @@ public class GameHandler : MonoBehaviour {
 
     //Function to Spawn enemies between 3 to 6 seconds and up to 1 and 3 seconds
     private void EnemySpawnTimer() {
-        float growth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/11.0f);// From 0 to 2/3 being the max
-        float delay = Random.Range(3.0f*growth,6.0f*growth);
+        float timerGrowth = 1.0f - (2.0f/3.0f)*((numberOfDays+1.0f)/21.0f);// From 0 to 2/3 being the max
+        float delay = Random.Range(6.0f*timerGrowth,12.0f*timerGrowth);
         enemySpawnTime = Time.timeSinceLevelLoad + delay;//Reset Timer
     }
 
@@ -88,10 +99,11 @@ public class GameHandler : MonoBehaviour {
 
     //Function to keep update numberof days, 1 day = 30 seconds
     private void DayTimer() {
-        player.GetComponent<Player>().hungerSystem.Starve(0.001f); //TO DO slower hunger lol
+        player.GetComponent<Player>().hungerSystem.Starve(0.001f);
         //Sin function that goes from 0 to 1 that will be a multiplier of the colour background
-        float dayLight = 0.6f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
+        float dayLight = 0.5f +  0.5f*(Mathf.Sin(((Time.timeSinceLevelLoad % 30.0f) / 30.0f) * 2f*Mathf.PI));
         numberOfDays = (int)(Time.timeSinceLevelLoad / 30);
+        enemyGrowth = 2f * numberOfDays;// 2 4 6 8 10 12
         timerText.text = "Day: " + numberOfDays.ToString();
         float clampedDayLight = Mathf.Clamp(dayLight, 0.5f, 1.0f);
         backgroundColor.sharedMaterial.color = new Color(clampedDayLight, clampedDayLight, clampedDayLight, 1);//dayTime system
@@ -99,7 +111,7 @@ public class GameHandler : MonoBehaviour {
 
     private void SpawnEnemy() {
         //Vector for random position in the map
-        Vector3 position = new Vector3(Random.Range(-19.0f, 19.0f), Random.Range(-11.0f,11.0f), 0.0f);
+        Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f,140.0f), 0.0f);
         if(Random.Range(0.0f,1.0f) > 0.33f) {//Spawn Knight with 66% chance
             Instantiate(knight, position, Quaternion.identity);
         } else {//Spawn Archer with 33% chance
@@ -107,28 +119,30 @@ public class GameHandler : MonoBehaviour {
         }
     }
 
-    private void SpawnResource()
-    {
+    private void SpawnResource() {
         //Vector for random position in the map
-        Vector3 position = new Vector3(Random.Range(-19.0f, 19.0f), Random.Range(-11.0f, 11.0f), 0.0f);
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//Spawn tree with 15% chance
-            Instantiate(tree, position, Quaternion.identity);
+        for (int i = 0; i < 5; i++) {
+            Vector3 position = new Vector3(Random.Range(-45.0f, 45.0f), Random.Range(-140.0f, 140.0f), 0.0f);
+            if (Random.Range(0.0f, 1.0f) > 0.80f){//Spawn tree with 20% chance
+            Instantiate(tree, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.80f){//spawn stone with 20% chance
+                Instantiate(stone, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn gold with 10% chance
+                Instantiate(gold, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.90f){//spawn iron with 10% chance
+                Instantiate(iron, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn coal with 15% chance
+                Instantiate(coal, position, Quaternion.identity, Resources.transform);
+            }
+            if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
+                Instantiate(meat, position, Quaternion.identity, Resources.transform);
+            }
         }
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn stone with 15% chance
-            Instantiate(stone, position, Quaternion.identity);
-        }
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn gold with 15% chance
-            Instantiate(gold, position, Quaternion.identity);
-        }
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn iron with 15% chance
-            Instantiate(iron, position, Quaternion.identity);
-        }
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn coal with 15% chance
-            Instantiate(coal, position, Quaternion.identity);
-        }
-        if (Random.Range(0.0f, 1.0f) > 0.85f){//spawn meat with 15% chance
-            Instantiate(meat, position, Quaternion.identity);
-        }
+        
     }
 
     public void UpdateScore(int points) {
@@ -143,12 +157,5 @@ public class GameHandler : MonoBehaviour {
 
     public void Restart() {
         SceneManager.LoadScene(currentScene);
-    }
-
-    public void dropItem(Transform position) {
-        //chance to drop item
-        if(Random.value > 0.6) {        
-            Instantiate(item, position);
-        }
     }
 }

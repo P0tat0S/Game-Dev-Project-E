@@ -10,7 +10,7 @@ public class PlayerProjectile : MonoBehaviour {
 
     //Public variables
     public float speed;
-    public float damage;
+    public float damage = 10f;
     public float projectileLife;
 
     

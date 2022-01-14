@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3412a8d0221fa4c439c173737a7c4d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -1
+  moveSpeed: 1.5
   health: 15
   pfHealthBar: {fileID: 2750507075470382024, guid: 13b7548b6f477b14f9ca9146a236364c, type: 3}
   scoreOnKill: 3
@@ -128,6 +128,9 @@ MonoBehaviour:
   Projectile: {fileID: 6051777856695151712, guid: a66d4217aaf4a0e469997a2d9864a814, type: 3}
   facingRight: 1
   animator: {fileID: 8201026191463814582}
+  Gold: {fileID: 6735872214674057119, guid: eda4a86a198440a45ad7c767b20473c2, type: 3}
+  Meat: {fileID: 662530668603735408, guid: 4b8e1e7f943559547a152200634e5750, type: 3}
+  Coin: {fileID: 7607429662335569065, guid: feca73e240c3e95459ea7e19b07e82dd, type: 3}
 --- !u!61 &9180933763561039536
 BoxCollider2D:
   m_ObjectHideFlags: 0
