@@ -37,11 +37,11 @@ public class PlayerInventoryHolder : InventoryHolder {
         itemToRemove.RemoveFromStack(amount);
     }
 
-    public bool ItemAmount(ItemData itemData, int itemAmount) {
-        List<InventorySlot> invSlot = secondaryInventorySystem.InventorySlots
-        .Where(slot => slot.ItemData == itemData)
-        .Where(slot => slot.StackSize <= itemAmount)
-        .ToList();
-        return invSlot == null ? false : true;
+    public bool ItemAmount(ItemData data, int amount) {
+        InventorySlot itemToCheck = secondaryInventorySystem.InventorySlots
+        .Where(slot => slot.ItemData == data)
+        .Where(slot => slot.StackSize >= amount)
+        .FirstOrDefault();
+        return itemToCheck == null ? true : false;
     }
 }

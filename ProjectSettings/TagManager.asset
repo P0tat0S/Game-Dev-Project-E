@@ -8,6 +8,7 @@ TagManager:
   - CraftingStation
   - Enemy
   - WorldTilemap
+  - ResourcePoint
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,6 @@ TagManager:
   - Interactable
   - playerMask
   - enemyMask
-  - 
   - 
   - 
   - 

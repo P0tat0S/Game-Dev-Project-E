@@ -15,12 +15,15 @@ public class Player : MonoBehaviour {
     private float nextDash;
 
     //Player Combat
-    public bool ableToAttack = false;
+    public bool ableToAttack = true;
     public bool died = false;
     public float attackCooldown;
     private bool attackPressed;
     private float nextAttack;
     public GameObject Projectile;
+    private float defense = 0f;
+    private bool armorEquiped = false;
+    public float Defense => defense;
 
     //Player Stats
     public Transform pfHealthBar;
@@ -38,6 +41,9 @@ public class Player : MonoBehaviour {
     public Animator animator;
     public bool facingRight = true;
 
+    //Placeable Objects (Not really scalable)
+    public GameObject chest;
+    public GameObject campfire;
     //Private variables
     private GameObject enemy;
     private GameObject[] enemies;
@@ -104,7 +110,7 @@ public class Player : MonoBehaviour {
             float dashSpeed = 2.5f;
             rb.MovePosition(transform.position + movement * dashSpeed);
             nextDash = Time.time + dashCooldown;
-            hungerSystem.Starve(1f);
+            hungerSystem.Starve(0.5f);
             dashPressed = false;
         }
 
@@ -150,8 +156,7 @@ public class Player : MonoBehaviour {
         Destroy(tutorial);
     }
 
-    public void Flip()
-    {
+    public void Flip() {
         //flips the enemy by inversing if it needs to face the other direction
         facingRight = !facingRight;
         Vector3 newScale = gameObject.transform.localScale;
@@ -159,6 +164,28 @@ public class Player : MonoBehaviour {
         gameObject.transform.localScale = newScale;
     }
 
+    public void EquipArmor() {
+        //Can only be equipped once
+        if(!armorEquiped) {
+            armorEquiped = true;
+            defense += 20f;
+        }
+    }
+    public void AddArmor(float defenseToAdd) {
+        //Just Add Armor
+        defense += defenseToAdd;
+    }
+    
+    public void EquipSword() {
+        //Equip Weapon to Attack with more damage
+    }
+    public void AddDamage(float attack) {
+        //Just Add Damage to Sword
+    }
+
+    public void PlaceObject(string objectToPlace) {
+      
+    }
     //Function that returns the closest enemy from a enemy array
     private GameObject ClosestEnemy(GameObject[] enemies) {
         var closestEnemy = enemies[0];

@@ -60,6 +60,8 @@ public class InventorySlot {
 
     public void RemoveFromStack(int amount) {
         stackSize -= amount;
+        var UISlot = GameObject.Find("PlayerInventory").GetComponent<DynamicInventoryDisplay>();
+        UISlot.RefreshDynamicInventory(UISlot.InventorySystem);
     }
 
     public bool SplitStack(out InventorySlot splitStack) {
