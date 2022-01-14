@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     private float nextDash;
 
     //Player Combat
+    public bool ableToAttack = true;
+    public bool died = false;
     public float attackCooldown;
     private bool attackPressed;
     private float nextAttack;
@@ -29,8 +31,9 @@ public class Player : MonoBehaviour {
     public HealthSystem healthSystem = new HealthSystem(100);
     private GameHandler gameHandler;
     public HungerSystem hungerSystem = new HungerSystem(50);
+    public float damage = 10f;
 
-    public Transform AttackPoint;
+    public Transform PlayerAttack;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
@@ -41,6 +44,10 @@ public class Player : MonoBehaviour {
     //Placeable Objects (Not really scalable)
     public GameObject chest;
     public GameObject campfire;
+    //Private variables
+    private GameObject enemy;
+    private GameObject[] enemies;
+    private Vector2 lastEnemyPosition;
 
     // Start is called before the first frame update
     private void Start() {
@@ -74,7 +81,7 @@ public class Player : MonoBehaviour {
     /***********
         Inputs
     ***********/
-    void OnMove(InputValue value) { 
+    void OnMove(InputValue value) {
         moveValue = value.Get<Vector2>(); DestroyTutorial();
         animator.SetFloat("Speed", Mathf.Abs(moveValue.magnitude));
         if(moveValue.x < 0 && facingRight) {
@@ -90,7 +97,9 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        try { enemy = ClosestEnemy(enemies); }
+        catch (System.IndexOutOfRangeException) { enemy = GameObject.Find("GameHandler"); } //TEMP fix
     }
 
     private void FixedUpdate(){//Fixed update for dashing and movement
@@ -106,16 +115,38 @@ public class Player : MonoBehaviour {
         }
 
         if(attackPressed) {//attack action
-            Instantiate(Projectile, transform);
             nextAttack = Time.time + attackCooldown;
             hungerSystem.Starve(0.1f);
-            attackPressed = false;
+            Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(PlayerAttack.position, attackRange, enemyLayers);
+
+            foreach(Collider2D enemy in hitEnemy) {
+                if (enemy.CompareTag("Enemy") && enemy.GetComponent<KnightBehaviour>() != null) {
+                    var health = enemy.GetComponent<KnightBehaviour>().healthSystem;
+
+
+                    animator.SetTrigger("LightAttack");
+                    health.Damage(damage);
+                }
+
+                if (enemy.CompareTag("Enemy") && enemy.GetComponent<ArcherBehaviour>() != null)
+                {
+                    var health = enemy.GetComponent<ArcherBehaviour>().healthSystem;
+
+
+                    animator.SetTrigger("LightAttack");
+                    health.Damage(damage);
+                }
+
+
+                attackPressed = false;
+            }
         }
 
         //Check if dead
-        if (healthSystem.GetHealth() == 0 || hungerSystem.GetHunger() == 0){
-            gameHandler.ShowGameOver();
-            Destroy(gameObject);
+        if ((healthSystem.GetHealth() == 0 || hungerSystem.GetHunger() == 0) && !died){
+            animator.SetTrigger("Dead");
+            Destroy(gameObject, 0.5f);
+            died = true;
         }
     }
 
@@ -153,6 +184,20 @@ public class Player : MonoBehaviour {
     }
 
     public void PlaceObject(string objectToPlace) {
-
+      
+    }
+    //Function that returns the closest enemy from a enemy array
+    private GameObject ClosestEnemy(GameObject[] enemies) {
+        var closestEnemy = enemies[0];
+        float lowestDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies) {
+            Vector3 vectorDifference = enemy.transform.position - transform.position;
+            float distanceBtwn = vectorDifference.sqrMagnitude;
+            if (distanceBtwn < lowestDistance) {
+                closestEnemy = enemy;
+                lowestDistance = distanceBtwn;
+            }
+        }
+        return closestEnemy;
     }
 }
