@@ -3,7 +3,20 @@ guid: 05ff4c69d9a836045b46520eb243e839
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameOverScreen: {instanceID: 0}
+  - knight: {fileID: 4014636961990557196, guid: 784b2f1df1a10df49b38fab101b31545, type: 3}
+  - archer: {fileID: 2739487577064298539, guid: 92058b5e815b34d4782d9929dbd1c1a0, type: 3}
+  - tree: {fileID: 8490434896007765537, guid: 01bdc7d5b2d4a784a858218d3c897def, type: 3}
+  - stone: {instanceID: 0}
+  - gold: {instanceID: 0}
+  - iron: {instanceID: 0}
+  - coal: {instanceID: 0}
+  - meat: {instanceID: 0}
+  - item: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - tile_water: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
